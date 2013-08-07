@@ -1,0 +1,35 @@
+p.notice, p.alert {
+  text-align: center;
+  margin: auto;
+  background: yellow;
+
+  top: 0px;
+  left: 0px;
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+
+  font-size: 20px;
+}
+
+body {
+  background-image: url('/beerback.jpg');
+}
+
+div.container {
+  width: 1000px;
+  margin: auto;
+}
+
+div.sidebar {
+  width: 200px;
+  float: left;
+  background: gray;
+}
+
+div.content {
+  width: 800px;
+  float: left;
+  background-color: rgba(0,0,0,0.5);
+}
+

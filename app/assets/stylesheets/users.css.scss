@@ -1,0 +1,102 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html, body, head, div, ul, li, header, nav, p, h3, h2, h1 {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.group {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+header.top {
+  width: 100%;
+  background-color: black;
+  border-bottom: 1px solid grey;
+}
+
+nav.top-bar {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav > div > a:hover {
+  background-color: darkgray;
+}
+
+ul.top-list > li > a {
+  padding: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-left: 1px solid grey;
+  display: block;
+}
+
+ul.top-list > li > a:hover {
+  background-color: darkgray;
+}
+
+ul.top-list > li:last-child > a {
+  border-right: 1px solid grey;
+}
+
+ul.top-list > li:last-child > a {
+  border-right: 1px solid grey;
+  }
+
+.logo > a {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  padding: 10px;
+}
+
+
+div.logo {
+  float: left;
+
+}
+
+.top-bar > ul {
+  float: right;
+  list-style-type: none;
+}
+
+.top-bar > ul > li {
+  float: left;
+}
+
+form.log-out-button  input {
+  background: black;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  cursor: pointer;
+  &:hover {
+    background: darkgray;
+  }
+}
+
+

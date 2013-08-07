@@ -1,0 +1,80 @@
+div.index {
+  width: 600px;
+  margin: auto;
+
+  h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding: 20px
+  }
+
+  .stats {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+  }
+
+  canvas {
+    float: right;
+  }
+
+  h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+  } 
+
+  .saved {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .saved > div > ul {
+    padding-top: 10px;
+    list-style-type: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 20px;
+  }
+
+  .saved > div > ul > li {
+    padding: 10px;
+  }
+
+  .recommended {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .recommended > div > ul {
+    padding-top: 10px;
+    list-style-type: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 20px;
+  }
+
+  .recommended > div > ul > li {
+    padding: 10px;
+  }
+
+  .recommended > div > ul > li > ul {
+    list-style-type: none;
+  }
+
+
+
+
+
+}

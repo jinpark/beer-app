@@ -1,0 +1,26 @@
+<div class='rate'>
+
+  <h2>Tell us your favorite beers!</h2>
+
+  <div class='rate-forms-container'>  
+
+    <form action="<%= favbeers_url %>" method="post" id="beer-select-form">
+      <h3>Your favorite beer</h3>
+      <%= render partial: "shared/beer_rate_form", locals: {beers: @beers}%>
+      <h3>Your go-to at the bar</h3>
+      <%= render partial: "shared/beer_rate_form", locals: {beers: @beers} %>
+      <h3>Your special occasion beer</h3>
+      <%= render partial: "shared/beer_rate_form", locals: {beers: @beers} %>
+      
+      <input type="hidden" value=<%= form_authenticity_token %> name="authenticity_token">
+
+      <input type="submit" value="Rate">
+    </form>
+  </div>
+</div>
+
+<script>
+$(document).ready($(".beer-list").chosen())
+
+
+</script>

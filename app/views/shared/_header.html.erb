@@ -1,0 +1,21 @@
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,700,100italic,300italic,400italic|IM+Fell+Double+Pica:400,400italic' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<header class="top group">
+  <nav class="top-bar">
+    <div class="logo">
+      <a href="#">Home</a>
+    </div>
+    <ul class="top-list">
+      <li>
+        <a href="#"><%= @user.username.capitalize %></a>
+      </li>
+      <li>
+        <%= button_to "Log Out", { controller: "devise/sessions", action: "destroy" }, method: :delete, form_class: "log-out-button"%>
+      </li>
+    </ul>
+  </nav>
+</header>
