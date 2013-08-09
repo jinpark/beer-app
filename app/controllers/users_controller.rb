@@ -18,8 +18,6 @@ class UsersController < ApplicationController
       beer_name = params[:beer_name]
       location = current_user.location
       @bars = find_bars_with_beer_name(beer_name, location)
-      p "LOOK HERE FOR BARS"
-      p @bars
     else
       @bars =[]
     end

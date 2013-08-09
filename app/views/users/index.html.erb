@@ -138,6 +138,7 @@
             <li><%= bar["name"] %> at <%= bar["address"] %></li>
           <% end %>
         </ul>
+        <div id='rec-map'>
     </div>
   </div>
 
@@ -146,6 +147,7 @@
 
 <script>
 
+
   $(document).ready($(".beers-select-list").chosen())
 
   $(document).ready($(".recommended-per-beer").hide())
@@ -153,6 +155,61 @@
   $(document).ready($(".recommend-button").on("click", function(event) {
     $(this).parent().parent().parent().children('ul').slideToggle()
   } ))
+
+  $(document).ready(function() {
+
+    var geocoder = null;
+    var map = null;
+    var latLon = null;
+
+    function init(startLoc) {
+      var geocoder1 = new google.maps.Geocoder();
+      var latlng = startLoc;
+      var mapOptions = {
+        zoom: 8,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      map = new google.maps.Map(document.getElementById('rec-map'), mapOptions);
+    }
+
+    function codeAddress(barLoc) {
+      var address = barLoc;
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+
+    
+    function returnLatLon(address1, callback) {
+      var address = address1;
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ 'address': address1 }, function(results, status){ 
+      if (status == google.maps.GeocoderStatus.OK) {
+        latLon = results[0].geometry.location;
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+      });
+      callback(latLon);
+
+    };
+
+    returnLatLon(String(<%= current_user.location %>), init);
+    // i;
+
+    })
+
+  
 
 
 </script>
