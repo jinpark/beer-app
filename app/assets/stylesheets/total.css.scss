@@ -1,20 +1,23 @@
 p.notice, p.alert {
   text-align: center;
   margin: auto;
-  background: yellow;
-
+  width: 100%;
+  background-color: rbga(255,255,204,0.3);
+  position: fixed;
   top: 0px;
   left: 0px;
-
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
-
   font-size: 20px;
 }
 
 body {
-  background-image: url('/beerback.jpg');
+  background-image: url('/background.png'), -webkit-linear-gradient(bottom, #FAFF69 0%, #EF5E16 100%);
+  background-position: left top;
+  background-repeat: repeat-x, no-repeat;
+  background-attachment:fixed, fixed;
 }
+
 
 div.container {
   width: 1000px;
@@ -30,6 +33,12 @@ div.sidebar {
 div.content {
   width: 800px;
   float: left;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.0);
 }
 
+.groupup:before {
+  content: '';
+  clear:both;
+  display: table;
+
+}

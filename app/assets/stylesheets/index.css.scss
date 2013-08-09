@@ -1,14 +1,29 @@
 div.index {
   width: 600px;
   margin: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+
+  .chzn-container {
+    color: black;
+  }
+
+  .hidden {
+    display: none;
+    visibility:hidden;
+  }
+
+  ul {
+    list-style-type: none;
+  }
 
   h2 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
-    color: white;
     font-size: 50px;
     text-align: center;
-    padding: 20px
+    padding: 30px;
+    color: black;
+    margin: 40px auto 0px auto;
   }
 
   .stats {
@@ -22,30 +37,71 @@ div.index {
   }
 
   h3 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
-    color: white;
     font-size: 30px;
   } 
 
-  .saved {
+  .saved, .favorited {
     width: 100%;
     background-color: rgba(0,0,0,0.5);
     padding: 20px;
     margin-top: 20px;
+  
+
+    div > ul {
+      padding-top: 10px;
+      list-style-type: none;
+      font-size: 20px;
+    }
+
+    div > ul > li {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .saved-beer-info {
+      float: left;
+    }
+
+    .delete-saved-beer {
+    float: left;
+    }
+
+    .favorited-beer-info {
+      float: left;
+    }
+
+    .favorited-saved-beer {
+    float: left;
+    }
+
+    li.group a {
+      color: white;
+    }
+
+    .button-container form {
+      float: left;
+    }
+
   }
 
-  .saved > div > ul {
-    padding-top: 10px;
-    list-style-type: none;
+
+
+  li.group input{
+    border: none;
+    float: right;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 15px;
+    vertical-align: baseline
+  }
+
+
+  h4 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
     color: white;
     font-size: 20px;
-  }
-
-  .saved > div > ul > li {
-    padding: 10px;
   }
 
   .recommended {
@@ -73,8 +129,39 @@ div.index {
     list-style-type: none;
   }
 
+  .bars {
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  #find-bars-link {
+    color: black;
+    text-decoration: none;
+    float: left;
+    padding: 3px 6px;
+    font-size: 14px;
+    background-color: rgb(192, 192, 192);
+    vertical-align: baseline;
+    margin: 2px;
+  }
+
+  div.button-container {
+    float: right
+  }
 
 
+  ul.recommended-per-beer {
+    list-style-type: circle;
+  }
 
+   button.recommend-me-button {
+    background-color: gray;
+  }
+
+  div.beer-info-and-buttons {
+    width: 100%
+  }
 
 }

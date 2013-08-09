@@ -4,8 +4,26 @@
 
   <div class="stats group">
     <h3> Favorite Beer Statistics </h3>
-    <canvas id="canvas" width="400" height="400"></canvas>
-    <div class="d3-chart"></div>
+
+    <%= pie_chart(@beerstyles_hash, library: {backgroundColor: "transparent", legend: {textStyle: {color: 'white'}}, title: "Beer Styles", titleTextStyle: {color: 'white'} }) %>
+    <%= column_chart(@beerabvs_hash, library: {
+      backgroundColor: "transparent", 
+      title: "# of Beers per ABV Range", 
+      titleTextStyle: {color: 'white'}, 
+      hAxis: {
+        title: "Beer ABV",  
+        titleTextStyle: {color: "white"}, 
+        gridlines: {color: "white"}, 
+        textStyle: {color: "white" }
+        }, 
+        vAxis: {
+          title: "# of Beers", 
+          titleTextStyle: {color: "white"}, 
+          gridlines: {color: "white" }, 
+          textStyle: {color: "white" }
+          }
+        }
+    ) %>
   </div>
 
   <div class="saved">
@@ -13,13 +31,77 @@
     <div class='saved-beers-list-container'>
       <ul>
         <% @saved_beers.each do |saved_beer| %>
-        <li> <%= saved_beer.beerinfo.beer_name %> </li>
+        <li class="group"> 
+          <div class="beer-info-and-buttons group">
+          <div class="saved-beer-info"> 
+            <a href="http://beeradvocate.com/beer/profile/<%= saved_beer.beerinfo.brewery_id %>/<%= saved_beer.beerinfo.beer_id %>"> <%= saved_beer.beerinfo.beer_name %></a>
+            by 
+            <%= saved_beer.beerinfo.brewery_name %>
+          </div>
+          <div class="button-container">
+            <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name), { :id => "find-bars-link"})%>
+            <form action="<%= user_savedbeer_url(current_user.id, saved_beer.id) %>" method="post" class="delete-saved-beer">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="hidden" name="_method", value="delete">
+              <input type="submit" value="unsave">
+            </form>
+            <button class="recommend-button">Recommend me!</button>
+          </div>
+          </div>
+
+             <ul class="recommended-per-beer groupup">
+            <% find_recommendations(saved_beer.beerinfo.beer_id)[1].each do |rec_beer| %>
+              <% rec_beer_info = find_beer_info(rec_beer[0]) %>
+            <li>
+              <%= rec_beer_info[1] %> by <%= rec_beer_info[0] %>
+            </li>
+            <% end %>
+          </ul>
+        </li>
+
         <% end %>
       </ul>
     </div>
+    <h4> Save another beer </h4>
+    
+    <form action="<%= user_savedbeers_url(current_user) %>" method="post">
+      <%= render partial: "shared/save_beer_form", locals: {beers: @allbeers}  %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Save Beer">
+    </form>
   </div>
 
-    <div class="recommended">
+  <div class="favorited">
+    <h3> Favorited Beers </h3>
+    <div class='favorited-beers-list-container'>
+      <ul>
+        <% @favorited_beers.each do |favorited_beer| %>
+        <li class="group"> <div class="favorited-beer-info"> 
+          <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
+          by 
+          <%= favorited_beer.beerinfo.brewery_name %>  </div>
+          <div class="button-container"><%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name), { :id => "find-bars-link"}) %>
+                  <form action="<%= user_favbeer_url(current_user.id, favorited_beer.id) %>" method="post" class="delete-favorited-beer">
+                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                   <input type="hidden" name="_method", value="delete">
+                  <input type="submit" value="unfavorite">
+                  </form></div>
+        </li>
+
+        <% end %>
+      </ul>
+    </div>
+    <h4> Favorite another beer </h4>
+    
+    <form action="<%= user_favbeers_url(current_user) %>" method="post">
+      <%= render partial: "shared/favorite_beer_form", locals: {beers: @allbeers}  %>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" value="Favorite Beer">
+    </form>
+  </div>
+
+
+  <div class="recommended">
     <h3> Recommended Beers </h3>
     <div class='recommended-beers-list-container'>
       <ul>
@@ -27,6 +109,12 @@
           <% 2.times do |i| %>
             <% rec = all_rec[1][i] %>
             <li> Try: <%= rec[0][1] %> by <%= rec[0][0] %> (Style: <%= rec[0][2] %>)
+              <form action="<%= user_savedbeers_url(current_user.id) %>" method="post" class="save-recommended-beer">
+                <input type="hidden" name="savedbeers[beer_id]" value="<%= rec[0][3] %>">
+                <%= rec[0][3]  %>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="submit" value="Save">
+              </form>
               <ul>
                 <li> 
                   Because you enjoyed 
@@ -40,40 +128,31 @@
     </div>
   </div>
 
+  <div class="<%= params[:beer_name].nil? ? "hidden" : "bars" %>"> 
+    <h3> Bars </h3>
+    <p> <%= @bars.empty? ? "There are no #{params[:beer_name]} in your area" : "" %></p>
+    <div class="bars-list-container <%= @bars.empty? ? "hidden" : "" %>">
+      <h4>You can find <%= params[:beer_name] %> at:
+        <ul>
+          <% @bars.each do |bar| %>
+            <li><%= bar["name"] %> at <%= bar["address"] %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+
 
 </div>
 
 <script>
-var pieData = [
-        {
-          value : 1,
-          color : "#F38630",
-          label : 'Sleep',
-          labelColor : 'white',
-          labelFontSize : '10',
-          labelAlign : 'left'
-        },
-        {
-          value : 1,
-          color : "#E0E4CC",
-          label : 'Music',
-          labelColor : '#444',
-          labelFontSize : '1.4em',
-          labelAlign: 'center'
-        },
-        {
-          value : 2,
-          color : "#69D2E7",
-          label : 'Work',
-          labelColor : 'rgb(0,0,0)',
-          labelFontSize : '175%'
-        }
-      ];
 
-  var myChart = new Chart(document.getElementById("canvas").getContext("2d"));
-  var myPie = myChart.Pie(pieData, {
-    animationSteps: 100,
-    animationEasing: 'easeOutBounce'
-  });
+  $(document).ready($(".beers-select-list").chosen())
+
+  $(document).ready($(".recommended-per-beer").hide())
+
+  $(document).ready($(".recommend-button").on("click", function(event) {
+    $(this).parent().parent().parent().children('ul').slideToggle()
+  } ))
+
 
 </script>

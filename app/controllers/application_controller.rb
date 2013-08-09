@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-    def find_recommendations(beer_id)
-    #
+  def find_recommendations(beer_id)
     beer_recs = []
     beer_recs1 = []
     beer_recs2 = []
@@ -27,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def find_beer_info(beer_id)
     beer = Beerinfo.find_by_beer_id(beer_id)
-    return [beer.brewery_name, beer.beer_name, beer.beer_style]
+    return [beer.brewery_name, beer.beer_name, beer.beer_style, beer.brewery_id]
   end
 
   def find_beer_info_array(recommendation_array)
@@ -38,9 +37,41 @@ class ApplicationController < ActionController::Base
     end
     beerinfos = Beerinfo.find_all_by_beer_id(beer_ids)
     beerinfos.each_with_index do |beer, i|
-      recommendation_array[i][0] = [beer.brewery_name, beer.beer_name, beer.beer_style]
+      recommendation_array[i][0] = [beer.brewery_name, beer.beer_name, beer.beer_style, beer.beer_id, beer.brewery_id]
     end
     recommendation_array.sort_by!{ |x| x[1]}.reverse!
     return recommendation_array
   end
+
+
+  def find_bars_with_beer_name(beer_name, location)
+
+    apiurl = Addressable::URI.new(
+   :scheme => "https",
+   :host => "www.taplister.com",
+   :path => "api/v3/bar",
+   :query_values => {
+    username: "jin",
+    api_key: ENV["TAPLISTER_API_KEY"],
+    near: location,
+    beer_query: beer_name,
+    radius: "10",
+    format: "json"
+    }
+    ).to_s
+
+    response = RestClient.get(apiurl)
+    JSON.parse(response)["objects"]
+  end
+
+
+
+
+
+
+
+
+
+
+
 end

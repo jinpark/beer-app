@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-html, body, head, div, ul, li, header, nav, p, h3, h2, h1 {
+html, body, head, div, ul, li, header, nav, p, h3, h2, h1, span, input {
   padding: 0;
   margin: 0;
   border: 0;
@@ -17,14 +17,12 @@ html, body, head, div, ul, li, header, nav, p, h3, h2, h1 {
 
 header.top {
   width: 100%;
-  background-color: black;
-  border-bottom: 1px solid grey;
+  background-color: white;
 }
 
 nav.top-bar {
   width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 nav > div > a:hover {
@@ -32,13 +30,12 @@ nav > div > a:hover {
 }
 
 ul.top-list > li > a {
-  padding: 10px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  color: white;
+  padding: 16px;
+  font-family: 'Julius Sans One', sans-serif;
+  color: black;
   text-decoration: none;
   font-size: 18px;
-  border-left: 1px solid grey;
+  // border-left: 1px solid grey;
   display: block;
 }
 
@@ -47,25 +44,26 @@ ul.top-list > li > a:hover {
 }
 
 ul.top-list > li:last-child > a {
-  border-right: 1px solid grey;
+  // border-right: 1px solid grey;
 }
 
 ul.top-list > li:last-child > a {
-  border-right: 1px solid grey;
+  // border-right: 1px solid grey;
   }
 
 .logo > a {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  color: white;
+  font-family: 'Bad Script', cursive;
+  font-size: 25px;
   text-decoration: none;
-  font-size: 18px;
   display: block;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-  padding: 10px;
+  // border-left: 1px solid gray;
+  // border-right: 1px solid gray;
+  padding: 0px 16px;
 }
 
+.logo > a:visited {
+  color: black;
+}
 
 div.logo {
   float: left;
@@ -81,22 +79,92 @@ div.logo {
   float: left;
 }
 
-form.log-out-button  input {
-  background: black;
-  color: white;
-  background-color: black;
-  padding: 10px;
+form.log-out-button input {
+  padding: 16px;
   font-size: 18px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Julius Sans One', sans-serif;
+  color: black;
   border-top: none;
   border-bottom: none;
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
+  // border-left: 1px solid grey;
+  // border-right: 1px solid grey;
   cursor: pointer;
   &:hover {
-    background: darkgray;
+    background: rgba(0,0,0,0.3);
   }
 }
 
+.bubble {
+   width:20px; /* Our bubble will be 200px wide and 200px tall */
+   height:20px;
+   margin:0 auto;
+   box-shadow:inset 3px 3px 7.5px rgba(0,0,0,.1), /* this gives us our subtle light gray background gradient */
+              inset .3px .3px .5px rgba(0,0,0,.5); /* this gives us the slightly darker top left edge */
+   border-radius:10px; /* making our border-radius half the width/height ensures a perfectly round circle */
+   background:rgba(255,255,255,.4); /* makes our bubble slightly lighter in color than the background */
+   position:relative; /* allows us to absolutely position the pseudo elements within the bubble */
+}
+
+.bubble:before { /* adds the white highlight on the top left of the bubble */
+   content:"";
+   display:block;
+   position:absolute;
+   width:10px;
+   height:10px;
+   top:1.5px;
+   left:1.5px;
+   border-radius: 15px 5px;
+   box-shadow:inset 1px 1px 5px rgba(255,255,255,.6);
+}
+
+
+.a {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+}
+
+.b {
+  position: fixed;
+  top: 200px;
+  left: 150px;
+}
+
+.c {
+  position: fixed;
+  top: 150px;
+  left: 1350px;
+}
+
+.d {
+  position: fixed;
+  top: 250px;
+  left: 1550px;
+}
+.e {
+  position: fixed;
+  top: 450px;
+  left: 1350px;
+}
+.f {
+  position: fixed;
+  top: 400px;
+  left: 200px;
+}
+
+.g {
+  position: fixed;
+  top: 250px;
+  left: 1050px;
+}
+.h {
+  position: fixed;
+  top: 450px;
+  left: 1050px;
+}
+.i {
+  position: fixed;
+  top: 400px;
+  left: 900px;
+}
 

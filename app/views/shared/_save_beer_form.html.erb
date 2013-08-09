@@ -1,0 +1,5 @@
+<select name="savedbeers[beer_id]" class="beers-select-list">
+<% beers.each do |beer|  %>
+  <option value="<%= beer.beer_id %>"><%=beer.brewery_name%> | <%= beer.beer_name %></option>
+<% end %>
+</select>

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   validates :username, :uniqueness => {:case_sensitive => false}
-  validates :username, :password, :email, presence: true
+  validates :username, :password, :email, :location, presence: true
 
   has_many :favbeers
   has_many :savedbeers

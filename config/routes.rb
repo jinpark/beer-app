@@ -6,9 +6,12 @@ BeerApp::Application.routes.draw do
     member do
       get 'rate'
     end
+    resources :favbeers, only: [:create, :destroy]
+    resources :savedbeers, only: [:create, :destroy]
   end
 
-  resources :favbeers
+  post 'findbar' => 'bars#findbar'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
