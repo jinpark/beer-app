@@ -1,3 +1,4 @@
+require 'addressable/uri'
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
@@ -51,7 +52,7 @@ class ApplicationController < ActionController::Base
    :host => "www.taplister.com",
    :path => "api/v3/bar",
    :query_values => {
-    username: "jin",
+    username: ENV["TAPLISTER_USERNAME"],
     api_key: ENV["TAPLISTER_API_KEY"],
     near: location,
     beer_query: beer_name,
