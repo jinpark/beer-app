@@ -44,7 +44,6 @@ gem 'devise'
 gem 'chosen_rails'
 
 gem 'rest-client'
-require 'addressable/uri'
 
 gem "chartkick"
 
