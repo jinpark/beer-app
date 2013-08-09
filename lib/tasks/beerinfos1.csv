@@ -1,0 +1,590 @@
+beer_id,beer_name,beer_style,beer_abv,brewery_name,brewery_id
+6,Turbodog,English Brown Ale,5.6,Abita Brewing Co.,3
+7,Purple Haze,Fruit / Vegetable Beer,4.2,Abita Brewing Co.,3
+10,Allagash Dubbel Ale,Dubbel,7,Allagash Brewing Company,4
+17,Widmer Hefeweizen,American Pale Wheat Ale,4.9,Widmer Brothers Brewing Company,8
+19,Mackeson Triple XXX Stout,Milk / Sweet Stout,4.9,Whitbread PLC,9
+30,Trois Pistoles,Belgian Strong Dark Ale,9,Unibroue,22
+31,Blanche De Chambly,Witbier,5,Unibroue,22
+33,Maudite,Belgian Strong Dark Ale,8,Unibroue,22
+34,La Fin Du Monde,Tripel,9,Unibroue,22
+36,Traquair House Ale,Scotch Ale / Wee Heavy,7.2,Traquair House Brewery Lld,24
+39,Alpha King Pale Ale,American Pale Ale (APA),6,Three Floyds Brewing Co. & Brewpub,26
+59,Allagash White,Witbier,5.2,Allagash Brewing Company,4
+61,Anchor Porter,American Porter,5.6,Anchor Brewing Company,28
+63,Anchor Steam Beer,California Common / Steam Beer,4.9,Anchor Brewing Company,28
+65,Budweiser,American Adjunct Lager,5,Anheuser-Busch,29
+73,Young's Double Chocolate Stout,Milk / Sweet Stout,5.2,Wells & Young's Ltd,664
+74,Post Road Pumpkin Ale,Pumpkin Ale,5,Brooklyn Brewery,45
+79,Wee Heavy,Scotch Ale / Wee Heavy,6.5,Belhaven Brewery Company Ltd.,148
+87,Stone Pale Ale,American Pale Ale (APA),5.4,Stone Brewing Co.,147
+88,Stone IPA (India Pale Ale),American IPA,6.9,Stone Brewing Co.,147
+90,Stone Smoked Porter,American Porter,5.9,Stone Brewing Co.,147
+92,Arrogant Bastard Ale,American Strong Ale,7.2,Stone Brewing Co.,147
+99,Spaten Optimator,Doppelbock,7.6,Spaten-Franziskaner-Bräu,142
+100,Blue Moon Harvest Moon Pumpkin Ale,Pumpkin Ale,5.7,Coors Brewing Company,306
+101,Samuel Adams Winter Lager,Bock,5.5,Boston Beer Company (Samuel Adams),35
+102,Samuel Adams Octoberfest,Märzen / Oktoberfest,5.3,Boston Beer Company (Samuel Adams),35
+103,Samuel Adams Summer Ale,American Pale Wheat Ale,5.3,Boston Beer Company (Samuel Adams),35
+104,Samuel Adams Boston Lager,Vienna Lager,4.9,Boston Beer Company (Samuel Adams),35
+108,Samuel Adams Cherry Wheat,Fruit / Vegetable Beer,5.3,Boston Beer Company (Samuel Adams),35
+111,Samuel Adams Triple Bock,American Strong Ale,17.5,Boston Beer Company (Samuel Adams),35
+129,Orval Trappist Ale,Belgian Pale Ale,6.9,Brasserie d'Orval S.A.,37
+131,Ayinger Celebrator Doppelbock,Doppelbock,6.7,Privatbrauerei Franz Inselkammer KG / Brauerei Aying,39
+132,Ayinger Bräu Weisse,Hefeweizen,5.1,Privatbrauerei Franz Inselkammer KG / Brauerei Aying,39
+138,Corsendonk Pater / Abbey Brown Ale,Dubbel,7.5,Brouwerij Corsendonk,41
+141,Hennepin (Farmhouse Saison),Saison / Farmhouse Ale,7.7,Brewery Ommegang,42
+142,Ommegang (Abbey Ale),Dubbel,8.5,Brewery Ommegang,42
+146,Brooklyn Brown Ale,American Brown Ale,5.6,Brooklyn Brewery,45
+147,Brooklyn East India Pale Ale,English India Pale Ale (IPA),6.8,Brooklyn Brewery,45
+148,Brooklyn Lager,American Amber / Red Lager,5.2,Brooklyn Brewery,45
+155,Gulden Draak (Dark Triple),Belgian Strong Dark Ale,10.5,Brouwerij Van Steenberge N.V.,48
+156,Piraat Ale,Belgian IPA,10.5,Brouwerij Van Steenberge N.V.,48
+159,Denver Pale Ale,English Pale Ale,5.4,Great Divide Brewing Company,158
+171,Dos Equis Amber Lager,Vienna Lager,4.5,"Cervecería Cuauhtémoc Moctezuma, S.A. de C.V.",57
+184,Smuttynose Old Brown Dog Ale,American Brown Ale,6.5,Smuttynose Brewing Company,141
+185,Smuttynose Imperial Stout (Big Beer Series),Russian Imperial Stout,9.8,Smuttynose Brewing Company,141
+186,Smuttynose Shoals Pale Ale,American Pale Ale (APA),5.4,Smuttynose Brewing Company,141
+195,Mirror Pond Pale Ale,American Pale Ale (APA),5,Deschutes Brewery,63
+197,Obsidian Stout,American Stout,6.4,Deschutes Brewery,63
+198,Black Butte Porter,American Porter,5.2,Deschutes Brewery,63
+199,Immort Ale,American Strong Ale,11,Dogfish Head Brewery,10099
+204,Old Scratch Amber Lager,California Common / Steam Beer,5.5,Flying Dog Brewery,68
+205,Snake Dog IPA,American IPA,7.1,Flying Dog Brewery,68
+206,Road Dog Porter,American Porter,6,Flying Dog Brewery,68
+219,Fuller's ESB,Extra Special / Strong Bitter (ESB),5.9,Fuller Smith & Turner PLC,71
+221,Fuller's London Porter,English Porter,5.4,Fuller Smith & Turner PLC,71
+222,Fuller's London Pride,English Pale Ale,4.7,Fuller Smith & Turner PLC,71
+224,Schneider Aventinus,Weizenbock,8.2,Weisses Bräuhaus G. Schneider & Sohn GmbH,72
+225,Great Lakes Burning River Pale Ale,American Pale Ale (APA),6,Great Lakes Brewing Company,73
+226,Great Lakes Edmund Fitzgerald Porter,American Porter,5.8,Great Lakes Brewing Company,73
+228,Great Lakes Dortmunder Gold,Dortmunder / Export Lager,5.8,Great Lakes Brewing Company,73
+229,Great Lakes Eliot Ness,Vienna Lager,6.2,Great Lakes Brewing Company,73
+232,Corona Extra,American Adjunct Lager,4.6,Grupo Modelo S.A. de C.V.,75
+234,Hacker-Pschorr Oktoberfest-Märzen,Märzen / Oktoberfest,5.8,Hacker-Pschorr Bräu GmbH,76
+236,Hobgoblin,English Brown Ale,5.2,Wychwood Brewery Company Ltd,160
+245,Fraoch Heather Ale,Scottish Gruit / Ancient Herbed Ale,5,Williams Brothers Brewing Company,12142
+246,Heineken Lager Beer,Euro Pale Lager,5,Heineken Nederland B.V.,81
+248,Hoegaarden Original White Ale,Witbier,4.9,Brouwerij van Hoegaarden,83
+262,Saint Bridget's Porter,American Porter,5.9,Great Divide Brewing Company,158
+276,Sierra Nevada Pale Ale,American Pale Ale (APA),5.6,Sierra Nevada Brewing Co.,140
+279,Sierra Nevada Porter,American Porter,5.6,Sierra Nevada Brewing Co.,140
+283,Sierra Nevada Stout,American Stout,5.8,Sierra Nevada Brewing Co.,140
+299,#9,Fruit / Vegetable Beer,5.1,Magic Hat Brewing Company,96
+310,Harpoon Winter Warmer,Winter Warmer,5.5,Harpoon Brewery,10097
+311,Harpoon IPA,American IPA,5.9,Harpoon Brewery,10097
+318,UFO Hefeweizen,American Pale Wheat Ale,5.1,Harpoon Brewery,10097
+321,Saranac Black Forest,Schwarzbier,5.5,Matt Brewing Company,99
+332,Miller Lite,Light Lager,4.17,Miller Brewing Co.,105
+353,Mocha Porter,American Porter,5.3,Rogue Ales,132
+354,Chipotle Ale,Chile Beer,5.5,Rogue Ales,132
+355,Dead Guy Ale,Maibock / Helles Bock,6.5,Rogue Ales,132
+356,Imperial Stout,Russian Imperial Stout,11,Rogue Ales,132
+358,XS Imperial India Pale Ale,American Double / Imperial IPA,9.5,Rogue Ales,132
+361,Brutal Bitter Ale,American IPA,5.8,Rogue Ales,132
+363,American Amber Ale,American Amber / Red Ale,5.6,Rogue Ales,132
+386,Paulaner Oktoberfest-Märzen,Märzen / Oktoberfest,6,Paulaner Brauerei GmbH & Co. KG,124
+387,Salvator Doppel Bock,Doppelbock,7.9,Paulaner Brauerei GmbH & Co. KG,124
+402,SkullSplitter,Scotch Ale / Wee Heavy,8.5,Orkney Brewery,118
+408,Old #38 Stout,Irish Dry Stout,5.6,North Coast Brewing Co.,112
+409,Scrimshaw Pilsner,German Pilsener,4.4,North Coast Brewing Co.,112
+410,Ruedrich's Red Seal Ale,American Amber / Red Ale,5.5,North Coast Brewing Co.,112
+411,Pranqster,Belgian Strong Pale Ale,7.6,North Coast Brewing Co.,112
+412,Old Rasputin Russian Imperial Stout,Russian Imperial Stout,9,North Coast Brewing Co.,112
+429,Pilsner Urquell,Czech Pilsener,4.4,"Plzensky Prazdroj, a. s.",1
+448,Allagash Tripel Ale,Tripel,9,Allagash Brewing Company,4
+449,Stella Artois,Euro Pale Lager,5,Stella Artois,169
+459,Fred,American Strong Ale,10,Hair of the Dog Brewing Company / Brewery and Tasting Room,173
+560,Fuller's 1845,English Strong Ale,6.3,Fuller Smith & Turner PLC,71
+567,Rolling Rock Extra Pale,American Adjunct Lager,4.6,Latrobe Brewing Co.,174
+570,Brooklyn Oktoberfest Beer,Märzen / Oktoberfest,5.5,Brooklyn Brewery,45
+571,Samuel Smith's Oatmeal Stout,Oatmeal Stout,5,Samuel Smith Old Brewery (Tadcaster),113
+572,"Samuel Smith's, The Famous Taddy Porter",English Porter,5,Samuel Smith Old Brewery (Tadcaster),113
+573,Samuel Smith's India Ale,English India Pale Ale (IPA),5,Samuel Smith Old Brewery (Tadcaster),113
+575,Samuel Smith's Old Brewery Pale Ale,English Pale Ale,5,Samuel Smith Old Brewery (Tadcaster),113
+576,Samuel Smith's Nut Brown Ale,English Brown Ale,5,Samuel Smith Old Brewery (Tadcaster),113
+577,Samuel Smith's Winter Welcome Ale,Winter Warmer,6,Samuel Smith Old Brewery (Tadcaster),113
+580,Miller High Life,American Adjunct Lager,5,Miller Brewing Co.,105
+582,Spaten Oktoberfestbier Ur-Märzen,Märzen / Oktoberfest,5.9,Spaten-Franziskaner-Bräu,142
+593,Rare Vos (Amber Ale),Belgian Pale Ale,6.5,Brewery Ommegang,42
+599,Lindemans Framboise,Lambic - Fruit,2.5,Brouwerij Lindemans,187
+607,Fat Tire Amber Ale,American Amber / Red Ale,5.2,New Belgium Brewing,192
+611,Hop Ottin' IPA,American IPA,7,Anderson Valley Brewing Company,193
+615,Barney Flats Oatmeal Stout,Oatmeal Stout,5.7,Anderson Valley Brewing Company,193
+622,Smuttynose Robust Porter,American Porter,5.7,Smuttynose Brewing Company,141
+635,Pauwel Kwak,Belgian Strong Pale Ale,8.4,Brouwerij Bosteels,202
+637,Old Speckled Hen,English Pale Ale,5.2,Greene King / Morland Brewery,203
+639,Newcastle Brown Ale,English Brown Ale,4.7,The Caledonian Brewery Company Limited,342
+643,Buffalo Bill's Pumpkin Ale,Pumpkin Ale,5.2,Buffalo Bill's Brewery,205
+645,Trappistes Rochefort 10,Quadrupel (Quad),11.3,Brasserie de Rochefort,207
+646,Westmalle Trappist Tripel,Tripel,9.5,Brouwerij Westmalle,208
+650,Guinness Extra Stout (Original),Irish Dry Stout,6,Guinness Ltd.,209
+656,Tripel Karmeliet,Tripel,8.4,Brouwerij Bosteels,202
+665,Anchor Liberty Ale,American Pale Ale (APA),6,Anchor Brewing Company,28
+667,Negra Modelo,Munich Dunkel Lager,5.4,Grupo Modelo S.A. de C.V.,75
+672,Chimay Première (Red),Dubbel,7,Bières de Chimay S.A.,215
+673,Rodenbach Grand Cru,Flanders Red Ale,6,Brouwerij Rodenbach N.V.,216
+674,Westmalle Trappist Dubbel,Dubbel,7,Brouwerij Westmalle,208
+680,Brooklyn Black Chocolate Stout,Russian Imperial Stout,10,Brooklyn Brewery,45
+689,Red Stripe Jamaican Lager,American Adjunct Lager,4.7,Desnoes & Geddes Limited,221
+694,Don de Dieu,Belgian Strong Pale Ale,9,Unibroue,22
+695,Duvel,Belgian Strong Pale Ale,8.5,Brouwerij Duvel Moortgat NV,222
+702,Juniper Pale Ale,Herbed / Spiced Beer,5.3,Rogue Ales,132
+703,Murphy's Irish Stout,Irish Dry Stout,4,Murphy Brewery Ireland Limited,240
+705,J.W. Lees Vintage Harvest Ale,English Barleywine,11.5,J.W. Lees & Co (Brewers) Ltd,178
+709,Big Eye IPA,American IPA,7,Ballast Point Brewing Company,199
+712,Weihenstephaner Original,Munich Helles Lager,5.1,Bayerische Staatsbrauerei Weihenstephan,252
+722,St. Bernardus Tripel,Tripel,8,Brouwerij St. Bernardus NV,259
+727,Aecht Schlenkerla Rauchbier Märzen,Rauchbier,5.4,Brauerei Heller-Trum / Schlenkerla,263
+731,Weihenstephaner Hefeweissbier,Hefeweizen,5.4,Bayerische Staatsbrauerei Weihenstephan,252
+751,Sweetwater 420 Extra Pale Ale,American Pale Ale (APA),5.4,SweetWater Brewing Company,273
+752,Guinness Foreign Extra Stout,Foreign / Export Stout,7.5,Guinness Ltd.,209
+754,Guinness Draught,Irish Dry Stout,4.2,Guinness Ltd.,209
+760,Weihenstephaner Kristallweissbier,Kristalweizen,5.4,Bayerische Staatsbrauerei Weihenstephan,252
+767,Tsingtao,American Adjunct Lager,4.8,"Tsingtao Brewery Co., Ltd.",281
+772,Hacker-Pschorr Hefe Weisse Natürtrub,Hefeweizen,5.5,Hacker-Pschorr Bräu GmbH,76
+776,Samichlaus Bier,Doppelbock,14,Brauerei Schloss Eggenberg,285
+779,Weihenstephaner Korbinian,Doppelbock,7.4,Bayerische Staatsbrauerei Weihenstephan,252
+782,Samuel Smith's Imperial Stout,Russian Imperial Stout,7,Samuel Smith Old Brewery (Tadcaster),113
+794,Bell's Amber Ale,American Amber / Red Ale,5.8,"Bell's Brewery, Inc.",287
+808,Weihenstephaner Hefeweissbier Dunkel,Dunkelweizen,5.3,Bayerische Staatsbrauerei Weihenstephan,252
+811,Bass Pale Ale,English Pale Ale,5,Bass Brewers Limited,293
+832,Dundee Original Honey Brown Lager,American Amber / Red Lager,4.5,Genesee Brewing Co. / Dundee Brewing Co.,302
+833,Samuel Adams Pale Ale,English Pale Ale,5.25,Boston Beer Company (Samuel Adams),35
+836,Brooklyn Ale / Pennant Ale '55,English Pale Ale,5,Brooklyn Brewery,45
+837,Coors Light,Light Lager,4.2,Coors Brewing Company,306
+846,Samuel Adams Scotch Ale,Scotch Ale / Wee Heavy,5.4,Boston Beer Company (Samuel Adams),35
+857,Trappist Westvleteren 8,Dubbel,8,Brouwerij Westvleteren (Sint-Sixtusabdij van Westvleteren),313
+862,Harp Lager,Euro Pale Lager,5,Guinness Ltd.,209
+875,Old Engine Oil,English Porter,6,Harviestoun Brewery Ltd.,323
+906,Saranac Black & Tan,Black & Tan,5.4,Matt Brewing Company,99
+909,Killian's Irish Red,American Amber / Red Lager,4.9,Coors Brewing Company,306
+914,Saranac Pale Ale,English Pale Ale,5.5,Matt Brewing Company,99
+916,Lagunitas IPA,American IPA,6.2,Lagunitas Brewing Company,220
+918,Foster's Lager,American Adjunct Lager,5,Foster's Group Limited,575
+924,Franziskaner Hefe-Weisse Dunkel,Dunkelweizen,5,Spaten-Franziskaner-Bräu,142
+926,Theakston Old Peculier,Old Ale,5.7,T & R Theakston Ltd.,359
+927,Beamish Irish Stout,Irish Dry Stout,4.1,Beamish & Crawford Plc.,358
+935,Warsteiner Premium Verum,German Pilsener,4.8,Warsteiner Brauerei,360
+945,Adam,Old Ale,10,Hair of the Dog Brewing Company / Brewery and Tasting Room,173
+1003,Golden Monkey,Tripel,9.5,Victory Brewing Company,345
+1005,HopDevil Ale,American IPA,6.7,Victory Brewing Company,345
+1008,Moonglow Weizenbock,Weizenbock,8.7,Victory Brewing Company,345
+1009,Old Horizontal,American Barleywine,11,Victory Brewing Company,345
+1010,Prima Pils,German Pilsener,5.3,Victory Brewing Company,345
+1013,Storm King Stout,Russian Imperial Stout,9.1,Victory Brewing Company,345
+1015,Whirlwind Witbier,Witbier,5,Victory Brewing Company,345
+1017,Festbier,Märzen / Oktoberfest,5.6,Victory Brewing Company,345
+1054,Trippel Belgian Style Ale,Tripel,7.8,New Belgium Brewing,192
+1056,Double Bastard Ale,American Strong Ale,10.5,Stone Brewing Co.,147
+1079,Shelter Pale Ale,American Pale Ale (APA),5,Dogfish Head Brewery,10099
+1093,Two Hearted Ale,American IPA,7,"Bell's Brewery, Inc.",287
+1094,Bell's Oberon Ale,American Pale Wheat Ale,5.8,"Bell's Brewery, Inc.",287
+1115,Lion Stout,Foreign / Export Stout,8.8,Ceylon / Lion Brewery Limited,389
+1117,Bell's Kalamazoo Stout,American Stout,6,"Bell's Brewery, Inc.",287
+1118,Chocolate Stout,American Stout,6,Rogue Ales,132
+1119,Redhook ESB,Extra Special / Strong Bitter (ESB),5.77,Redhook Ale Brewery,18134
+1128,Old Heathen Imperial Stout,Russian Imperial Stout,8,Weyerbacher Brewing Co.,392
+1153,Chicory Stout,American Stout,5.2,Dogfish Head Brewery,10099
+1157,Honker's Ale,English Bitter,4.2,Goose Island Beer Co.,1549
+1158,Pride & Joy Mild Ale,American Pale Ale (APA),5,Three Floyds Brewing Co. & Brewpub,26
+1159,Robert The Bruce Scottish Ale,Scottish Ale,6.5,Three Floyds Brewing Co. & Brewpub,26
+1160,Stone Imperial Russian Stout,Russian Imperial Stout,10.5,Stone Brewing Co.,147
+1161,Indian Brown Ale,American Brown Ale,7.2,Dogfish Head Brewery,10099
+1163,Belhaven Scottish Ale,Scottish Ale,5.2,Belhaven Brewery Company Ltd.,148
+1173,Santa's Private Reserve Ale,American Amber / Red Ale,6,Rogue Ales,132
+1180,Raison D'etre,Belgian Strong Dark Ale,8,Dogfish Head Brewery,10099
+1192,Dominion Oak Barrel Stout,American Stout,6.1,Old Dominion Brewing Company,402
+1193,Samuel Adams Boston Ale (Stock Ale),American Pale Ale (APA),4.94,Boston Beer Company (Samuel Adams),35
+1206,Bell's Pale Ale,American Pale Ale (APA),5.2,"Bell's Brewery, Inc.",287
+1212,Blue Moon Belgian White,Witbier,5.4,Coors Brewing Company,306
+1213,Doggie Style Classic Pale Ale,American Pale Ale (APA),5.5,Flying Dog Brewery,68
+1249,Kirin Ichiban,American Pale Lager,5,"Kirin Brewery Company, Limited",292
+1252,Michelob Amber Bock,Bock,5.2,Anheuser-Busch,29
+1256,Paulaner Hefe-Weissbier Naturtrüb,Hefeweizen,5.5,Paulaner Brauerei GmbH & Co. KG,124
+1276,Coors,American Adjunct Lager,5,Coors Brewing Company,306
+1287,Bell's Porter,American Porter,5.6,"Bell's Brewery, Inc.",287
+1314,Xingu Black Beer,Schwarzbier,4.7,Cervejaria Sul Brasileira,434
+1320,Bud Light,Light Lager,4.2,Anheuser-Busch,29
+1324,Aecht Schlenkerla Rauchbier Urbock,Rauchbier,6.6,Brauerei Heller-Trum / Schlenkerla,263
+1331,Pabst Blue Ribbon (PBR),American Adjunct Lager,4.74,Pabst Brewing Company,447
+1339,Hazelnut Brown Nectar,American Brown Ale,6.2,Rogue Ales,132
+1346,Chimay Tripel (White),Tripel,8,Bières de Chimay S.A.,215
+1351,Yuengling Traditional Lager,American Amber / Red Lager,4.4,Yuengling Brewery ,23980
+1352,Shiner Bock,Bock,4.4,Spoetzl Brewery,143
+1361,Ayinger Oktober Fest-Märzen,Märzen / Oktoberfest,5.8,Privatbrauerei Franz Inselkammer KG / Brauerei Aying,39
+1371,Labatt Blue,American Adjunct Lager,5,Labatt Brewing Company Ltd.,478
+1372,Maximus,American Double / Imperial IPA,8.2,Lagunitas Brewing Company,220
+1381,Yuengling Black & Tan,Black & Tan,4.7,Yuengling Brewery ,23980
+1385,Delirium Tremens,Belgian Strong Pale Ale,8.5,Brouwerij Huyghe,180
+1402,La Trappe Quadrupel (Koningshoeven / Dominus),Quadrupel (Quad),10,Bierbrouwerij De Koningshoeven B.V.,184
+1421,Delirium Nocturnum,Belgian Strong Dark Ale,8.5,Brouwerij Huyghe,180
+1426,Grolsch Premium Lager,Euro Pale Lager,5,Grolsch Bierbrouwerij N.V.,506
+1444,Bell's Expedition Stout,Russian Imperial Stout,10.5,"Bell's Brewery, Inc.",287
+1445,Anchor Old Foghorn,English Barleywine,8.2,Anchor Brewing Company,28
+1446,Hibernation Ale,Old Ale,8.7,Great Divide Brewing Company,158
+1464,Saranac India Pale Ale,American IPA,5.8,Matt Brewing Company,99
+1483,Hops Infusion,American IPA,6.2,Weyerbacher Brewing Co.,392
+1490,Hog Heaven Barley Wine,American Barleywine,9.2,Avery Brewing Company,30
+1493,Sweetwater IPA,American IPA,6.3,SweetWater Brewing Company,273
+1503,Sam Adams Light,Light Lager,4,Boston Beer Company (Samuel Adams),35
+1524,Natural Light,Light Lager,4.2,Anheuser-Busch,29
+1543,Sawtooth Ale,Extra Special / Strong Bitter (ESB),5.3,Left Hand Brewing Company,418
+1545,Trappist Westvleteren 12,Quadrupel (Quad),10.2,Brouwerij Westvleteren (Sint-Sixtusabdij van Westvleteren),313
+1558,Dreadnaught IPA,American Double / Imperial IPA,9.5,Three Floyds Brewing Co. & Brewpub,26
+1566,Blithering Idiot,English Barleywine,11.1,Weyerbacher Brewing Co.,392
+1575,Great Lakes Commodore Perry IPA,English India Pale Ale (IPA),7.5,Great Lakes Brewing Company,73
+1576,Great Lakes Christmas Ale,Winter Warmer,7.5,Great Lakes Brewing Company,73
+1577,Wisconsin Belgian Red,Fruit / Vegetable Beer,4,New Glarus Brewing Company,590
+1579,Olde GnarlyWine,American Barleywine,10.6,Lagunitas Brewing Company,220
+1585,Raspberry Tart,Fruit / Vegetable Beer,4,New Glarus Brewing Company,590
+1587,Midas Touch Golden Elixir,Herbed / Spiced Beer,9,Dogfish Head Brewery,10099
+1597,St. Rogue Red,American Amber / Red Ale,5.1,Rogue Ales,132
+1611,Warsteiner Premium Dunkel,Munich Dunkel Lager,4.9,Warsteiner Brauerei,360
+1632,Cantillon Kriek 100% Lambic,Lambic - Fruit,5,Brasserie Cantillon,388
+1641,Bitburger Premium Pils,German Pilsener,4.8,Bitburger Brauerei,613
+1655,Red Rocket Ale,American Amber / Red Ale,6.8,Bear Republic Brewing Co.,610
+1658,Big Bear Black Stout,American Double / Imperial Stout,8.1,Bear Republic Brewing Co.,610
+1670,Indica India Pale Ale,American IPA,6.5,Lost Coast Brewery and Cafe,256
+1696,Trappistes Rochefort 8,Dubbel,9.2,Brasserie de Rochefort,207
+1708,St. Bernardus Abt 12,Quadrupel (Quad),10,Brouwerij St. Bernardus NV,259
+1717,Saison Dupont,Saison / Farmhouse Ale,6.5,Brasserie Dupont sprl,637
+1745,Duchesse De Bourgogne,Flanders Red Ale,6,Brouwerij Verhaeghe,641
+1769,Alaskan Smoked Porter,American Porter,6.5,Alaskan Brewing Co.,429
+1774,Köstritzer Schwarzbier,Schwarzbier,4.8,Köstritzer Schwarzbierbrauerei GmbH & Co.,648
+1790,Peroni Nastro Azzurro,Euro Pale Lager,5.1,Birra Peroni Industriale S.p.A.,258
+1792,Great Lakes Nosferatu,American Strong Ale,8,Great Lakes Brewing Company,73
+1798,Boddingtons Pub Ale,English Pale Ale,4.7,Boddingtons,655
+1836,La Chouffe,Belgian Strong Pale Ale,8,Brasserie d'Achouffe,321
+1855,St. Bernardus Prior 8,Dubbel,8,Brouwerij St. Bernardus NV,259
+1856,St. Bernardus Pater 6,Dubbel,6.7,Brouwerij St. Bernardus NV,259
+1867,Old Stock Ale,Old Ale,11.9,North Coast Brewing Co.,112
+1879,Samuel Adams Cream Stout,Milk / Sweet Stout,4.9,Boston Beer Company (Samuel Adams),35
+1881,Samuel Adams Old Fezziwig Ale,Winter Warmer,5.9,Boston Beer Company (Samuel Adams),35
+1882,Rodenbach Classic (Red),Flanders Red Ale,5.2,Brouwerij Rodenbach N.V.,216
+1891,Third Coast Old Ale,American Barleywine,10.2,"Bell's Brewery, Inc.",287
+1903,Samuel Adams Cranberry Lambic,Fruit / Vegetable Beer,5.9,Boston Beer Company (Samuel Adams),35
+1904,Sierra Nevada Celebration Ale,American IPA,6.8,Sierra Nevada Brewing Co.,140
+1912,Abbey Belgian Style Ale,Dubbel,7,New Belgium Brewing,192
+1914,1554 Enlightened Black Ale,Belgian Dark Ale,5.6,New Belgium Brewing,192
+1917,La Folie,Flanders Red Ale,6,New Belgium Brewing,192
+1924,Bell's Best Brown,English Brown Ale,5.8,"Bell's Brewery, Inc.",287
+1932,Pumpkinhead Ale,Pumpkin Ale,5.1,Shipyard Brewing Co.,139
+1934,Schneider Aventinus Weizen-Eisbock,Eisbock,12,Weisses Bräuhaus G. Schneider & Sohn GmbH,72
+1944,Spaten Münchner Hell (Premium Lager),Munich Helles Lager,5.2,Spaten-Franziskaner-Bräu,142
+1946,Franziskaner Hefe-Weisse,Hefeweizen,5,Spaten-Franziskaner-Bräu,142
+1963,Spotted Cow,Cream Ale,4.8,New Glarus Brewing Company,590
+2010,Bell's Java Stout,American Double / Imperial Stout,7.5,"Bell's Brewery, Inc.",287
+2014,The Reverend,Quadrupel (Quad),10,Avery Brewing Company,30
+2040,Reissdorf Kölsch,Kölsch,4.8,Brauerei Heinrich Reissdorf,288
+2041,Erdinger Weissbier Dunkel,Dunkelweizen,5.6,Erdinger Weissbräu,703
+2081,Winter Solstice Seasonal Ale,Winter Warmer,6.9,Anderson Valley Brewing Company,193
+2093,90 Minute IPA,American Double / Imperial IPA,9,Dogfish Head Brewery,10099
+2137,Leffe Blonde,Belgian Pale Ale,6.6,Abbaye de Leffe S.A.,470
+2151,Tire Bite Golden Ale,Kölsch,5.1,Flying Dog Brewery,68
+2178,Jubelale,Winter Warmer,6.7,Deschutes Brewery,63
+2231,Brooklyn Monster Ale,English Barleywine,10.8,Brooklyn Brewery,45
+2249,In-Heat Wheat,Hefeweizen,4.7,Flying Dog Brewery,68
+2264,Brown Shugga',American Strong Ale,9.99,Lagunitas Brewing Company,220
+2280,Miller Genuine Draft,American Adjunct Lager,4.66,Miller Brewing Co.,105
+2296,Moose Drool Brown Ale,American Brown Ale,5.1,Big Sky Brewing Company,751
+2347,Delirium Noël,Belgian Strong Dark Ale,10,Brouwerij Huyghe,180
+2392,World Wide Stout,American Double / Imperial Stout,18,Dogfish Head Brewery,10099
+2403,Bell's Special Double Cream Stout,American Stout,6.1,"Bell's Brewery, Inc.",287
+2434,Erdinger Weissbier,Hefeweizen,5.6,Erdinger Weissbräu,703
+2435,Beck's,German Pilsener,5,Brauerei Beck & Co.,32
+2442,St. Peter's Cream Stout,Milk / Sweet Stout,6.5,St. Peter's Brewery Co Ltd,296
+2508,Maredsous 8 - Dubbel,Dubbel,8,Brouwerij Duvel Moortgat NV,222
+2511,Bell's Cherry Stout,American Stout,7,"Bell's Brewery, Inc.",287
+2512,Chimay Grande Réserve (Blue),Belgian Strong Dark Ale,9,Bières de Chimay S.A.,215
+2533,Hairy Eyeball Ale,American Strong Ale,9,Lagunitas Brewing Company,220
+2550,Anchor Summer Beer,American Pale Wheat Ale,4.6,Anchor Brewing Company,28
+2557,Cantillon Rosé De Gambrinus,Lambic - Fruit,5,Brasserie Cantillon,388
+2566,Maredsous 10 - Triple,Tripel,10,Brouwerij Duvel Moortgat NV,222
+2619,Tröegs Pale Ale,American Pale Ale (APA),5.4,Tröegs Brewing Company,694
+2671,Sierra Nevada Bigfoot Barleywine Style Ale,American Barleywine,9.6,Sierra Nevada Brewing Co.,140
+2678,Horn Dog Barley Wine Style Ale,English Barleywine,10.5,Flying Dog Brewery,68
+2684,Samuel Adams Honey Porter,English Porter,5.45,Boston Beer Company (Samuel Adams),35
+2704,St-Ambroise Oatmeal Stout,Oatmeal Stout,5,McAuslan Brewing,194
+2729,India Pale Ale (IPA),American IPA,6.5,Avery Brewing Company,30
+2732,Bell's Consecrator Doppelbock,Doppelbock,8,"Bell's Brewery, Inc.",287
+2751,Racer 5 India Pale Ale,American IPA,7,Bear Republic Brewing Co.,610
+2758,Sinebrychoff Porter,Baltic Porter,7.2,Oy Sinebrychoff Ab,264
+2894,Ellie's Brown Ale,American Brown Ale,5.5,Avery Brewing Company,30
+2904,New Holland Mad Hatter India Pale Ale,American IPA,5.25,New Holland Brewing Company,335
+2965,XS Old Crustacean,American Barleywine,11.5,Rogue Ales,132
+3089,Raison D'extra,Belgian Strong Dark Ale,18,Dogfish Head Brewery,10099
+3158,Hop Rod Rye,Rye Beer,8,Bear Republic Brewing Co.,610
+3280,Schneider Weisse Original,Hefeweizen,5.4,Weisses Bräuhaus G. Schneider & Sohn GmbH,72
+3295,Old Jubilation,Old Ale,8.3,Avery Brewing Company,30
+3338,Cadillac Mountain Stout,American Stout,6.7,Bar Harbor Brewing Company,347
+3434,Left Hand Milk Stout,Milk / Sweet Stout,6,Left Hand Brewing Company,418
+3439,Moylander Double IPA,American Double / Imperial IPA,8.5,Moylan's Brewery,870
+3457,Three Philosophers Belgian Style Blend (Quadrupel),Quadrupel (Quad),9.8,Brewery Ommegang,42
+3523,Éphémère (Apple),Fruit / Vegetable Beer,5.5,Unibroue,22
+3558,Sierra Nevada Summerfest Lager,Czech Pilsener,5,Sierra Nevada Brewing Co.,140
+3635,La Terrible,Belgian Strong Dark Ale,10.5,Unibroue,22
+3711,Censored,American Amber / Red Ale,6.75,Lagunitas Brewing Company,220
+3734,Michelob Ultra,Light Lager,4.2,Anheuser-Busch,29
+3824,Monty Python's Holy Grail Ale,English Pale Ale,4.7,Black Sheep Brewery PLC,1417
+3833,AleSmith Speedway Stout,American Double / Imperial Stout,12,AleSmith Brewing Company,396
+3842,Trappistes Rochefort 6,Belgian Strong Dark Ale,7.5,Brasserie de Rochefort,207
+3916,AleSmith IPA,American IPA,7.25,AleSmith Brewing Company,396
+3951,ApriHop,American IPA,7,Dogfish Head Brewery,10099
+3968,India Pale Ale,English India Pale Ale (IPA),5.9,Goose Island Beer Co.,1549
+4073,Founders Pale Ale,American Pale Ale (APA),5.4,Founders Brewing Company,1199
+4083,Stone Ruination IPA,American Double / Imperial IPA,7.7,Stone Brewing Co.,147
+4108,Tröegs Sunshine Pils,German Pilsener,5.3,Tröegs Brewing Company,694
+4109,Troegenator Double Bock,Doppelbock,8.2,Tröegs Brewing Company,694
+4318,Matilda,Belgian Strong Pale Ale,7,Goose Island Beer Co.,1549
+4394,Smuttynose Big A IPA (Big Beer Series),American Double / Imperial IPA,9.6,Smuttynose Brewing Company,141
+4694,Baltika #6 Porter,Baltic Porter,7,Baltika Breweries,401
+4970,White Hawk Original IPA,American IPA,7,Mendocino Brewing Company,200
+5057,Fantôme Saison,Saison / Farmhouse Ale,8,Brasserie Fantôme,738
+5385,Dark Horse Crooked Tree IPA,American IPA,6,Dark Horse Brewing Company,1471
+5428,New Holland Dragon's Milk Oak Barrel Ale,American Stout,10,New Holland Brewing Company,335
+5441,Founders Centennial IPA,American IPA,7.2,Founders Brewing Company,1199
+5488,Wells Banana Bread Beer,Fruit / Vegetable Beer,5.2,Wells & Young's Ltd,664
+5653,Double Barrel Ale,English Pale Ale,5,Firestone Walker Brewing Co.,2210
+5753,Fire Rock Pale Ale,American Pale Ale (APA),5.8,Kona Brewing Co.,579
+5948,Terrapin Rye Pale Ale,American Pale Ale (APA),5.3,Terrapin Beer Company,2372
+6073,Merry Monks' Ale,Tripel,9.3,Weyerbacher Brewing Co.,392
+6076,Flower Power India Pale Ale,American IPA,7.5,Ithaca Beer Company,651
+6104,Lindemans Gueuze Cuvée René,Gueuze,5,Brouwerij Lindemans,187
+6108,60 Minute IPA,American IPA,6,Dogfish Head Brewery,10099
+6260,Punkin Ale,Pumpkin Ale,7,Dogfish Head Brewery,10099
+6301,Stone Levitation Ale,American Amber / Red Ale,4.4,Stone Brewing Co.,147
+6322,Tröegs Hopback Amber Ale,American Amber / Red Ale,6,Tröegs Brewing Company,694
+6368,Masala Mama India Pale Ale,American IPA,5.9,Minneapolis Town Hall Brewery,1177
+6518,Dale's Pale Ale,American Pale Ale (APA),6.5,Oskar Blues Grill & Brew,2681
+6533,Olde School Barleywine,American Barleywine,15.04,Dogfish Head Brewery,10099
+6549,Northern Hemisphere Harvest Wet Hop Ale,American IPA,6.7,Sierra Nevada Brewing Co.,140
+6590,Hazed & Infused,American Pale Ale (APA),4.85,Boulder Beer / Wilderness Pub,130
+6715,Budweiser Budvar,Czech Pilsener,5,Brewery Budweiser Budvar / B.B.N.P.,304
+6947,Cuvée Van De Keizer Blauw (Blue),Belgian Strong Dark Ale,11,Brouwerij Het Anker,1534
+7284,YuleSmith (Summer),American Double / Imperial IPA,8.5,AleSmith Brewing Company,396
+7348,Founders Porter,American Porter,6.5,Founders Brewing Company,1199
+7438,Alpha Klaus Christmas (Xmas) Porter,American Porter,6,Three Floyds Brewing Co. & Brewpub,26
+7463,Founders Dirty Bastard,Scotch Ale / Wee Heavy,8.5,Founders Brewing Company,1199
+7520,Dark Lord Imperial Stout,Russian Imperial Stout,15,Three Floyds Brewing Co. & Brewpub,26
+7531,Tröegs Mad Elf,Belgian Strong Dark Ale,11,Tröegs Brewing Company,694
+7597,Pure Hoppiness,American Double / Imperial IPA,8,Alpine Beer Company,3120
+7850,The Czar,Russian Imperial Stout,11.03,Avery Brewing Company,30
+7879,St. Bernardus Witbier,Witbier,5.5,Brouwerij St. Bernardus NV,259
+7971,Pliny The Elder,American Double / Imperial IPA,8,Russian River Brewing Company,863
+8023,Siberian Night Imperial Stout,Russian Imperial Stout,9.7,Thirsty Dog Brewing Company,12516
+8297,Samuel Adams White Ale,Witbier,5.2,Boston Beer Company (Samuel Adams),35
+8322,New Holland The Poet,Oatmeal Stout,5.2,New Holland Brewing Company,335
+8682,Bell's Winter White Ale,Witbier,5,"Bell's Brewery, Inc.",287
+8919,G'Knight Imperial Red Ale,American Double / Imperial IPA,8.7,Oskar Blues Grill & Brew,2681
+8951,Oaked Arrogant Bastard Ale,American Strong Ale,7.2,Stone Brewing Co.,147
+8998,V-Twelve,Quadrupel (Quad),12,Victory Brewing Company,345
+9086,120 Minute IPA,American Double / Imperial IPA,18,Dogfish Head Brewery,10099
+9088,IPA (India Pale Ale),American IPA,7.3,Southern Tier Brewing Company,3818
+9171,Pangaea,Belgian Strong Pale Ale,7,Dogfish Head Brewery,10099
+9474,Temptation,American Wild Ale,7.25,Russian River Brewing Company,863
+9478,Gumballhead,American Pale Wheat Ale,4.5,Three Floyds Brewing Co. & Brewpub,26
+9689,White Rascal,Witbier,5.6,Avery Brewing Company,30
+9755,Double White Ale,Witbier,6.7,Southampton Publick House,1628
+9873,Hi.P.A.,American IPA,6.7,Magic Hat Brewing Company,96
+10071,Sapporo Premium Beer,Japanese Rice Lager,5,Sapporo Breweries Ltd.,284
+10325,Péché Mortel (Imperial Stout Au Cafe),American Double / Imperial Stout,9.5,Brasserie Dieu Du Ciel,1141
+10482,Monk's Café Flemish Sour Ale,Flanders Oud Bruin,5.5,Brouwerij Van Steenberge N.V.,48
+10672,Bourbon County Brand Stout,American Double / Imperial Stout,14.5,Goose Island Beer Co.,1549
+11582,Kulmbacher Reichelbrau Eisbock,Eisbock,9.2,Kulmbacher Brauerei AG,412
+11757,Founders Breakfast Stout,American Double / Imperial Stout,8.3,Founders Brewing Company,1199
+11819,Smuttynose Pumpkin Ale,Pumpkin Ale,6,Smuttynose Brewing Company,141
+11922,Titan IPA,American IPA,7.1,Great Divide Brewing Company,158
+12013,Yeti Imperial Stout,Russian Imperial Stout,9.5,Great Divide Brewing Company,158
+12104,Tröegs Dead Reckoning Porter,American Porter,5.4,Tröegs Brewing Company,694
+12322,Mojo IPA,American IPA,7.2,Boulder Beer / Wilderness Pub,130
+12770,Damnation,Belgian Strong Pale Ale,7.75,Russian River Brewing Company,863
+14309,Samuel Adams Chocolate Bock,Bock,5.8,Boston Beer Company (Samuel Adams),35
+14712,Old Chub - Scottish Style Ale,Scotch Ale / Wee Heavy,8,Oskar Blues Grill & Brew,2681
+14916,Hop Wallop,American Double / Imperial IPA,8.5,Victory Brewing Company,345
+15216,Samuel Adams Hefeweizen,American Pale Wheat Ale,5.4,Boston Beer Company (Samuel Adams),35
+15589,Thomas Hooker Liberator Doppelbock,Doppelbock,8,Thomas Hooker Brewing Company,696
+15619,The Beast Grand Cru,Belgian Strong Dark Ale,16.83,Avery Brewing Company,30
+15813,Great Lakes Blackout Stout,Russian Imperial Stout,9,Great Lakes Brewing Company,73
+15881,Tröegs Nugget Nectar,American Amber / Red Ale,7.5,Tröegs Brewing Company,694
+16074,Founders Red's Rye PA,Rye Beer,6.6,Founders Brewing Company,1199
+16403,"Smuttynose IPA ""Finest Kind""",American IPA,6.9,Smuttynose Brewing Company,141
+16471,Heavy Seas - Small Craft Warning (Über Pils),American Double / Imperial Pilsner,7.25,Heavy Seas Beer,898
+16506,Ommegang Witte,Witbier,5.1,Brewery Ommegang,42
+16807,Pere Jacques,Dubbel,8,Goose Island Beer Co.,1549
+16858,Thomas Hardy's Ale (2003-2008),Old Ale,11.9,O'Hanlon's Brewing Co. Ltd.,1533
+16909,Allagash Curieux (Bourbon Barrel-Aged Tripel),Tripel,11,Allagash Brewing Company,4
+17060,Hercules Double IPA,American Double / Imperial IPA,10,Great Divide Brewing Company,158
+17112,Bell's Hopslam Ale,American Double / Imperial IPA,10,"Bell's Brewery, Inc.",287
+17141,312 Urban Wheat,American Pale Wheat Ale,4.2,Goose Island Beer Co.,1549
+17538,Founders Devil Dancer,American Double / Imperial IPA,12,Founders Brewing Company,1199
+18198,Heresy,Russian Imperial Stout,8,Weyerbacher Brewing Co.,392
+18199,Insanity,English Barleywine,11.1,Weyerbacher Brewing Co.,392
+18305,DreamWeaver Wheat,Hefeweizen,4.8,Tröegs Brewing Company,694
+18721,Cascazilla,American Amber / Red Ale,7,Ithaca Beer Company,651
+18862,Burton Baton,American Double / Imperial IPA,10,Dogfish Head Brewery,10099
+18975,Oro De Calabaza,Bière de Garde,8,Jolly Pumpkin Artisan Ales,9897
+19216,Oak Aged Yeti Imperial Stout,Russian Imperial Stout,9.5,Great Divide Brewing Company,158
+19314,La Roja,American Wild Ale,7.2,Jolly Pumpkin Artisan Ales,9897
+19425,The Kaiser,Märzen / Oktoberfest,10.03,Avery Brewing Company,30
+19426,Fuller's Vintage Ale,Old Ale,8.5,Fuller Smith & Turner PLC,71
+19589,Lagunitas PILS (Czech Style Pilsner),Czech Pilsener,6.2,Lagunitas Brewing Company,220
+19667,Heavy Seas - Peg Leg (Imperial Stout),Russian Imperial Stout,8,Heavy Seas Beer,898
+19960,Founders KBS (Kentucky Breakfast Stout),American Double / Imperial Stout,11.2,Founders Brewing Company,1199
+20168,Hoptical Illusion,American IPA,6.8,Blue Point Brewing Company,764
+20216,Duck-Rabbit Milk Stout,Milk / Sweet Stout,5.7,The Duck-Rabbit Craft Brewery,9790
+20232,Terrapin Big Hoppy Monster,American Amber / Red Ale,8.3,Terrapin Beer Company,2372
+20445,Cappuccino Stout,American Double / Imperial Stout,8.8,Lagunitas Brewing Company,220
+20470,Stoudt's Double IPA (India Pale Ale),American Double / Imperial IPA,10,Stoudts Brewing Co.,394
+20478,Founders Harvest Ale,American IPA,6.5,Founders Brewing Company,1199
+20536,Phin & Matt's Extraordinary Ale,American Pale Ale (APA),5.4,Southern Tier Brewing Company,3818
+20539,Stoudt's Fat Dog (Imperial Oatmeal Stout),American Double / Imperial Stout,9,Stoudts Brewing Co.,394
+20564,Samuel Adams Holiday Porter,American Porter,5.8,Boston Beer Company (Samuel Adams),35
+20604,Hell Hath No Fury Ale,Belgian Strong Dark Ale,7.7,"Bell's Brewery, Inc.",287
+20781,21st Amendment IPA,American IPA,7,21st Amendment Brewery,735
+20931,Old Ruffian Barley Wine,American Barleywine,10.2,Great Divide Brewing Company,158
+21100,Oat (Imperial Oatmeal Stout),American Double / Imperial Stout,11,Southern Tier Brewing Company,3818
+21300,Samuel Adams Black Lager,Schwarzbier,4.9,Boston Beer Company (Samuel Adams),35
+21690,Pliny The Younger,American Double / Imperial IPA,11,Russian River Brewing Company,863
+21822,Founders Imperial Stout,Russian Imperial Stout,10.5,Founders Brewing Company,1199
+21950,Terrapin Coffee Oatmeal Imperial Stout,American Double / Imperial Stout,8.1,Terrapin Beer Company,2372
+22227,Supplication,American Wild Ale,7,Russian River Brewing Company,863
+22352,Maharaja,American Double / Imperial IPA,10.3,Avery Brewing Company,30
+22381,Dark Horse Double Crooked Tree IPA,American Double / Imperial IPA,13.6,Dark Horse Brewing Company,1471
+22505,Green Flash West Coast I.P.A.,American IPA,7.3,Green Flash Brewing Co.,2743
+22527,471 IPA,American Double / Imperial IPA,9.2,Breckenridge Brewery,2137
+22790,Blind Pig IPA,American IPA,6.1,Russian River Brewing Company,863
+24071,Gonzo Imperial Porter,Baltic Porter,9.2,Flying Dog Brewery,68
+24905,Founders Curmudgeon (Old Ale),Old Ale,9.8,Founders Brewing Company,1199
+25259,Hopsickle Imperial India Pale Ale,American Double / Imperial IPA,9.2,Moylan's Brewery,870
+25755,Heavy Seas - Loose Cannon (Hop3 Ale),American IPA,7.25,Heavy Seas Beer,898
+25880,Imperial Pumpkin Ale,Pumpkin Ale,8,Weyerbacher Brewing Co.,392
+26072,Noire De Chambly / Chambly Noire,Belgian Dark Ale,6.2,Unibroue,22
+26159,Urthel Hop-It,Belgian IPA,9.5,De Leyerth Brouwerijen (Urthel),1339
+26233,Fresh Hop Pale Ale,American Pale Ale (APA),6.1,Great Divide Brewing Company,158
+26542,2° Below Winter Ale,Extra Special / Strong Bitter (ESB),6.6,New Belgium Brewing,192
+27354,Winter's Bourbon Cask Ale,Winter Warmer,6,Anheuser-Busch,29
+27514,Samuel Adams Brown Ale,English Brown Ale,5.35,Boston Beer Company (Samuel Adams),35
+27800,Vanilla Porter,American Porter,4.7,Breckenridge Brewery,2137
+27804,Houblon Chouffe Dobbelen IPA Tripel,Belgian IPA,9,Brasserie d'Achouffe,321
+28165,Bender,American Brown Ale,5.1,Surly Brewing Company,13014
+28176,Bam Bière,Saison / Farmhouse Ale,4.5,Jolly Pumpkin Artisan Ales,9897
+28203,Furious,American IPA,6.2,Surly Brewing Company,13014
+28204,Mephistopheles' Stout,American Double / Imperial Stout,16.8,Avery Brewing Company,30
+28536,Circus Boy,American Pale Wheat Ale,4.4,Magic Hat Brewing Company,96
+28577,Unearthly (Imperial India Pale Ale),American Double / Imperial IPA,9.5,Southern Tier Brewing Company,3818
+28578,Jahva (Imperial Coffee Stout),American Double / Imperial Stout,10.4,Southern Tier Brewing Company,3818
+28877,Beer Geek Breakfast,American Double / Imperial Stout,7.5,Mikkeller ApS,13307
+29015,Leinenkugel's Sunset Wheat,Witbier,4.9,Jacob Leinenkugel Brewing Company,710
+29209,Inversion IPA,American IPA,6.8,Deschutes Brewery,63
+29602,Smithwick's,Irish Red Ale,4.5,Guinness Ltd.,209
+29619,Sculpin India Pale Ale,American IPA,7,Ballast Point Brewing Company,199
+30282,Brother Thelonious,Belgian Strong Dark Ale,9.4,North Coast Brewing Co.,112
+30288,Double Simcoe IPA,American Double / Imperial IPA,9,Weyerbacher Brewing Co.,392
+30420,Sierra Nevada Torpedo Extra IPA,American IPA,7.2,Sierra Nevada Brewing Co.,140
+30502,Cane & Ebel,Rye Beer,7,Two Brothers Brewing Company,689
+30538,Mothership Wit (Organic Wheat Beer),Witbier,4.8,New Belgium Brewing,192
+30764,Coffee Bender,American Brown Ale,5.1,Surly Brewing Company,13014
+30845,CynicAle,Saison / Farmhouse Ale,6.7,Surly Brewing Company,13014
+30970,He'Brew Bittersweet Lenny's R.I.P.A.,American Double / Imperial IPA,10,Shmaltz Brewing Company,262
+31323,Hop 15,American Double / Imperial IPA,10,Port Brewing Company / Pizza Port,5318
+31613,Old Viscosity,American Double / Imperial Stout,10,Port Brewing Company / Pizza Port,5318
+32413,The Angel's Share - Bourbon Barrel-Aged,American Strong Ale,12.5,The Lost Abbey,18149
+32435,Red & White,Witbier,10,Dogfish Head Brewery,10099
+33127,Darkness,Russian Imperial Stout,10.3,Surly Brewing Company,13014
+33183,Pipeline Porter,American Porter,5.4,Kona Brewing Co.,579
+33243,Wipeout I.P.A.,American IPA,7,Port Brewing Company / Pizza Port,5318
+33644,B.O.R.I.S. The Crusher Oatmeal-Imperial Stout,Russian Imperial Stout,9.4,Hoppin' Frog Brewery,14879
+33832,Palo Santo Marron,American Brown Ale,12,Dogfish Head Brewery,10099
+34085,Green Flash Imperial India Pale Ale,American Double / Imperial IPA,9.4,Green Flash Brewing Co.,2743
+34094,Older Viscosity,American Double / Imperial Stout,12,Port Brewing Company / Pizza Port,5318
+34146,Founders Double Trouble,American Double / Imperial IPA,9.4,Founders Brewing Company,1199
+34306,Pannepot,Quadrupel (Quad),10,De Struise Brouwers,15237
+34420,The Abyss,American Double / Imperial Stout,11,Deschutes Brewery,63
+34483,Ten FIDY,Russian Imperial Stout,10.5,Oskar Blues Grill & Brew,2681
+34688,Long Hammer IPA,American IPA,6.5,Redhook Ale Brewery,18134
+34877,Collaboration Not Litigation Ale,Belgian Strong Dark Ale,8.72,Avery Brewing Company,30
+35036,Founders Backwoods Bastard,Scotch Ale / Wee Heavy,10.2,Founders Brewing Company,1199
+35328,Brooklyn Local 1,Belgian Strong Pale Ale,9,Brooklyn Brewery,45
+35397,Lagunitas Lucky 13 Mondo Large Red Ale,American Amber / Red Ale,8.9,Lagunitas Brewing Company,220
+35625,Weihenstephaner Vitus,Weizenbock,7.7,Bayerische Staatsbrauerei Weihenstephan,252
+35720,Festina Pêche,Berliner Weissbier,4.5,Dogfish Head Brewery,10099
+35732,Green Flash Hop Head Red Ale,American Amber / Red Ale,7,Green Flash Brewing Co.,2743
+35738,Hop Stoopid,American Double / Imperial IPA,8,Lagunitas Brewing Company,220
+35754,Double Dog Double Pale Ale,American Double / Imperial IPA,11.5,Flying Dog Brewery,68
+36727,Green Flash Le Freak,Belgian IPA,9.2,Green Flash Brewing Co.,2743
+37477,Sierra Nevada Anniversary Ale (2007-2009),American IPA,5.9,Sierra Nevada Brewing Co.,140
+37774,Schneider-Brooklyner Hopfen-Weisse,Weizenbock,8.2,Weisses Bräuhaus G. Schneider & Sohn GmbH,72
+38180,Union Jack India Pale Ale,American IPA,7.5,Firestone Walker Brewing Co.,2210
+38334,Black Albert,Russian Imperial Stout,13,De Struise Brouwers,15237
+38365,Samuel Adams Irish Red,Irish Red Ale,5.8,Boston Beer Company (Samuel Adams),35
+38394,Pumking,Pumpkin Ale,8.6,Southern Tier Brewing Company,3818
+38470,Stone Sublimely Self-Righteous Ale,American Black Ale,8.7,Stone Brewing Co.,147
+38591,Samuel Adams Hallertau Imperial Pilsner,American Double / Imperial Pilsner,8.1,Boston Beer Company (Samuel Adams),35
+38818,Chocolate Indulgence Stout,Belgian Dark Ale,7,Brewery Ommegang,42
+39639,Double Wide I.P.A.,American Double / Imperial IPA,8.5,Boulevard Brewing Co.,423
+39908,Shock Top Belgian White,Witbier,5.2,Anheuser-Busch,29
+40057,Gemini (Imperial Blended Ale),American Strong Ale,10.5,Southern Tier Brewing Company,3818
+40058,Choklat,American Double / Imperial Stout,11,Southern Tier Brewing Company,3818
+40149,Brooklyn Black OPS,Russian Imperial Stout,10.7,Brooklyn Brewery,45
+40443,Baltic Thunder,Baltic Porter,8.5,Victory Brewing Company,345
+40492,Sierra Nevada ESB (Early Spring Beer),Extra Special / Strong Bitter (ESB),5.9,Sierra Nevada Brewing Co.,140
+41702,Theobroma,Chile Beer,9,Dogfish Head Brewery,10099
+41815,Parabola,Russian Imperial Stout,12.5,Firestone Walker Brewing Co.,2210
+42533,Sierra Nevada Southern Hemisphere Harvest Fresh Hop Ale,American IPA,6.7,Sierra Nevada Brewing Co.,140
+42723,Espresso Oak Aged Yeti Imperial Stout,American Double / Imperial Stout,9.5,Great Divide Brewing Company,158
+43118,Budweiser American Ale,American Amber / Red Ale,5.3,Anheuser-Busch,29
+43491,Stone 12th Anniversary Bitter Chocolate Oatmeal Stout,American Double / Imperial Stout,9.2,Stone Brewing Co.,147
+43687,Creme Brulee (Imperial Milk Stout),American Double / Imperial Stout,9.6,Southern Tier Brewing Company,3818
+43905,Stone Cali-Belgique,Belgian IPA,6.9,Stone Brewing Co.,147
+43969,Yellow Snow IPA,American IPA,6.2,Rogue Ales,132
+44755,Harpoon Leviathan - Imperial IPA,American Double / Imperial IPA,10,Harpoon Brewery,10097
+45073,Plead The 5th Imperial Stout,Russian Imperial Stout,12,Dark Horse Brewing Company,1471
+45653,Consecration,American Wild Ale,10,Russian River Brewing Company,863
+46070,Back In Black,American Black Ale,6.8,21st Amendment Brewery,735
+46290,Jack D'or,Saison / Farmhouse Ale,6.4,Pretty Things Beer & Ale Project,18371
+46363,Jai Alai IPA,American IPA,7.5,Cigar City Brewing,17981
+46385,Yakima Glory,American Black Ale,8.7,Victory Brewing Company,345
+46849,Abrasive Ale,American Double / Imperial IPA,9,Surly Brewing Company,13014
+46987,Beer Geek Brunch Weasel,American Double / Imperial Stout,10.9,Mikkeller ApS,13307
+47228,Iniquity (Imperial Black Ale),American Black Ale,9,Southern Tier Brewing Company,3818
+47317,Samuel Adams Imperial White,Witbier,10.3,Boston Beer Company (Samuel Adams),35
+47360,Samuel Adams Imperial Stout,Russian Imperial Stout,9.2,Boston Beer Company (Samuel Adams),35
+47364,Samuel Adams Blackberry Witbier,Witbier,5.5,Boston Beer Company (Samuel Adams),35
+47434,Hop Henge Experimental IPA,American Double / Imperial IPA,9,Deschutes Brewery,63
+47658,Founders CBS Imperial Stout,American Double / Imperial Stout,10.6,Founders Brewing Company,1199
+47692,Night Stalker,American Double / Imperial Stout,11.7,Goose Island Beer Co.,1549
+47785,Samuel Adams Double Bock (Imperial Series),Doppelbock,9.5,Boston Beer Company (Samuel Adams),35
+48050,Young's Oatmeal Stout,Oatmeal Stout,5.2,Wells & Young's Ltd,664
+48139,Mama's Little Yella Pils,Czech Pilsener,5.3,Oskar Blues Grill & Brew,2681
+48243,Modus Hoperandi,American IPA,6.8,Ska Brewing Co.,923
+48434,Sierra Nevada Kellerweis Hefeweizen,Hefeweizen,4.8,Sierra Nevada Brewing Co.,140
+48505,Victory At Sea Coffee Vanilla Imperial Porter,American Porter,10,Ballast Point Brewing Company,199
+48824,Sofie,Saison / Farmhouse Ale,6.5,Goose Island Beer Co.,1549
+49286,Mokah,American Double / Imperial Stout,11.2,Southern Tier Brewing Company,3818
+49789,A Little Sumpin' Sumpin' Ale,American Pale Wheat Ale,7.5,Lagunitas Brewing Company,220
+49838,Squall IPA,American Double / Imperial IPA,9,Dogfish Head Brewery,10099
+50176,Chocolate Oak Aged Yeti,American Double / Imperial Stout,9.5,Great Divide Brewing Company,158
+50697,Double Jack,American Double / Imperial IPA,9.5,Firestone Walker Brewing Co.,2210
+50795,Stone 13th Anniversary Ale,American Strong Ale,9.5,Stone Brewing Co.,147
+52128,Tröegs Java Head Stout,Oatmeal Stout,7.5,Tröegs Brewing Company,694
+52361,The Oracle,American Double / Imperial IPA,10,"Bell's Brewery, Inc.",287
+52855,Raging Bitch Belgian-Style IPA,Belgian IPA,8.3,Flying Dog Brewery,68
+53886,Terrapin Hopsecutioner,American IPA,7.3,Terrapin Beer Company,2372
+54089,Life & Limb,American Strong Ale,10.2,Sierra Nevada Brewing Co.,140
+54904,Samuel Adams Noble Pils,Czech Pilsener,4.9,Boston Beer Company (Samuel Adams),35
+55081,Ranger,American IPA,6.5,New Belgium Brewing,192
+55243,Sierra Nevada Glissade Golden Bock,Maibock / Helles Bock,6.4,Sierra Nevada Brewing Co.,140
+55412,GUBNA Imperial IPA,American Double / Imperial IPA,10,Oskar Blues Grill & Brew,2681
+55939,Hoptimum Double IPA - Beer Camp #19,American Double / Imperial IPA,10.4,Sierra Nevada Brewing Co.,140
+56613,Wilco Tango Foxtrot,American Strong Ale,7.83,Lagunitas Brewing Company,220
+56761,30th Anniversary - Fritz And Ken's Ale,American Double / Imperial Stout,9.2,Sierra Nevada Brewing Co.,140
+56973,Shakespeare Oatmeal Stout,Oatmeal Stout,6.1,Rogue Ales,132
+57252,Samuel Adams Latitude 48 IPA,American IPA,6,Boston Beer Company (Samuel Adams),35
+57908,2XIPA,American Double / Imperial IPA,8.2,Southern Tier Brewing Company,3818
+57912,A Little Sumpin' Wild,Belgian IPA,9.4,Lagunitas Brewing Company,220
+59151,Miles Davis' Bitches Brew,Russian Imperial Stout,9,Dogfish Head Brewery,10099
+59369,Stone 14th Anniversary Emperial IPA,American Double / Imperial IPA,8.9,Stone Brewing Co.,147
+60420,Sierra Nevada Tumbler Autumn Brown Ale,American Brown Ale,5.5,Sierra Nevada Brewing Co.,140
+62645,Lukcy 13asartd Ale,American Strong Ale,8.5,Stone Brewing Co.,147
+72138,Stone 15th Anniversary Escondidian Imperial Black IPA,American Black Ale,10.8,Stone Brewing Co.,147
