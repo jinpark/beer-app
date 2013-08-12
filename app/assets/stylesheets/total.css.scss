@@ -3,7 +3,7 @@ p.notice, p.alert {
   margin: auto;
   width: 100%;
   background-color: rbga(255,255,204,0.3);
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   font-family: 'Josefin Sans', sans-serif;
@@ -16,8 +16,16 @@ body {
   background-position: left top;
   background-repeat: repeat-x, no-repeat;
   background-attachment:fixed, fixed;
+  -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+  -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+  -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+  transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
 }
 
+body:hover {
+    background-color: white;
+
+}
 
 div.container {
   width: 1000px;
@@ -25,13 +33,13 @@ div.container {
 }
 
 div.sidebar {
-  width: 200px;
+  // width: 200px;
   float: left;
   background: gray;
 }
 
 div.content {
-  width: 800px;
+  width: 1000px;
   float: left;
   background-color: rgba(0,0,0,0.0);
 }

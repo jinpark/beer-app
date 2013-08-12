@@ -18,6 +18,8 @@ html, body, head, div, ul, li, header, nav, p, h3, h2, h1, span, input {
 header.top {
   width: 100%;
   background-color: white;
+  position: fixed;
+
 }
 
 nav.top-bar {
@@ -59,10 +61,26 @@ ul.top-list > li:last-child > a {
   // border-left: 1px solid gray;
   // border-right: 1px solid gray;
   padding: 0px 16px;
+  color: black
 }
 
 .logo > a:visited {
   color: black;
+}
+
+.logo-mid{
+  position: fixed;
+}
+
+.logo-mid > a {
+  font-family: 'Bad Script', cursive;
+  font-size: 25px;
+  text-decoration: none;
+  display: block;
+  color: black;
+  &:hover {
+    background-color: rgba(0,0,0,0);
+  }
 }
 
 div.logo {

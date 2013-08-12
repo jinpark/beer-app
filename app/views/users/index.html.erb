@@ -39,7 +39,7 @@
             <%= saved_beer.beerinfo.brewery_name %>
           </div>
           <div class="button-container">
-            <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name), { :id => "find-bars-link"})%>
+            <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"})%>
             <form action="<%= user_savedbeer_url(current_user.id, saved_beer.id) %>" method="post" class="delete-saved-beer">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <input type="hidden" name="_method", value="delete">
@@ -80,7 +80,7 @@
           <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
           by 
           <%= favorited_beer.beerinfo.brewery_name %>  </div>
-          <div class="button-container"><%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name), { :id => "find-bars-link"}) %>
+          <div class="button-container"><%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"}) %>
                   <form action="<%= user_favbeer_url(current_user.id, favorited_beer.id) %>" method="post" class="delete-favorited-beer">
                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                    <input type="hidden" name="_method", value="delete">
@@ -129,18 +129,21 @@
   </div>
 
   <div class="<%= params[:beer_name].nil? ? "hidden" : "bars" %>"> 
+    <a name="bars"></a>
     <h3> Bars </h3>
     <p> <%= @bars.empty? ? "There are no #{params[:beer_name]} in your area" : "" %></p>
     <div class="bars-list-container <%= @bars.empty? ? "hidden" : "" %>">
-      <h4>You can find <%= params[:beer_name] %> at:
+      <h4>You can find <%= params[:beer_name] %> at: </h4>
         <ul>
           <% @bars.each do |bar| %>
             <li><%= bar["name"] %> at <%= bar["address"] %></li>
           <% end %>
         </ul>
         <div id='rec-map'>
+        <div id='map' style="width: 400px; height: 400px;"></div>
     </div>
   </div>
+
 
 
 </div>
@@ -161,9 +164,10 @@
     var geocoder = null;
     var map = null;
     var latLon = null;
+    var bars = <%= raw @bars.to_json %>;
 
     function init(startLoc) {
-      var geocoder1 = new google.maps.Geocoder();
+      var geocoder = new google.maps.Geocoder();
       var latlng = startLoc;
       var mapOptions = {
         zoom: 8,
@@ -173,7 +177,7 @@
       map = new google.maps.Map(document.getElementById('rec-map'), mapOptions);
     }
 
-    function codeAddress(barLoc) {
+    function codeAddress(barLoc, info) {
       var address = barLoc;
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': address}, function(results, status) {
@@ -181,7 +185,13 @@
           map.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
               map: map,
+              info: info,
               position: results[0].geometry.location
+          });
+          var infowindow = new google.maps.InfoWindow();
+          google.maps.event.addListener(marker, 'click', function () {
+            infowindow.setContent('<p id="hook">' + this.info + '</p>');
+            infowindow.open(map, this);
           });
         } else {
           alert('Geocode was not successful for the following reason: ' + status);
@@ -190,24 +200,54 @@
     }
 
     
-    function returnLatLon(address1, callback) {
+    function returnLatLon(address1) {
       var address = address1;
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode({ 'address': address1 }, function(results, status){ 
       if (status == google.maps.GeocoderStatus.OK) {
         latLon = results[0].geometry.location;
+        callback(latLon);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
       });
-      callback(latLon);
 
     };
 
     returnLatLon(String(<%= current_user.location %>), init);
-    // i;
+    for (var i = 0; i < bars.length; i++) {
+      codeAddress(bars[i]['address'] + <%= current_user.location %>, bars[i]['name'] + '<br>' + bars[i]['address'] + '<br>' + bars[i]['phone'])
+    }
+    
+
+
 
     })
+
+
+//mapbox stuff
+// var map = L.mapbox.map('map', 'jinpark.map-x0vxytgt')
+//     .setView([37.9, -77], 6);
+
+// L.mapbox.markerLayer({
+//     // this feature is in the GeoJSON format: see geojson.org
+//     // for the full specification
+//     type: 'Feature',
+//     geometry: {
+//         type: 'Point',
+//         // coordinates here are in longitude, latitude order because
+//         // x, y is the standard for GeoJSON and many formats
+//         coordinates: [-77, 37.9]
+//     },
+//     properties: {
+//         title: 'A Single Marker',
+//         description: 'Just one of me',
+//         // one can customize markers by adding simplestyle properties
+//         // http://mapbox.com/developers/simplestyle/
+//         'marker-size': 'large',
+//         'marker-color': '#f0a'
+//     }
+// }).addTo(map);
 
   
 
