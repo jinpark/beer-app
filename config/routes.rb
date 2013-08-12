@@ -3,14 +3,12 @@ BeerApp::Application.routes.draw do
 
   root to: "users#index"
   resources :users do
-    member do
-      get 'rate'
-    end
     resources :favbeers, only: [:create, :destroy]
     resources :savedbeers, only: [:create, :destroy]
   end
-
+  get 'rate' => "favbeers#rate"
   post 'findbar' => 'bars#findbar'
+  post "create_favbeer" => "users#create_favbeer"
 
 
   # The priority is based upon order of creation:

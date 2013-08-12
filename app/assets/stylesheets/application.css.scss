@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require chosen
+ *= require_tree
  */
 
 @import "total.css.scss";
@@ -18,3 +19,4 @@
 @import "rate.css.scss";
 @import "favbeers.css.scss";
 @import "devise.css.scss";
+@import "animate-custom.css.scss";

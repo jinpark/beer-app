@@ -1,53 +1,57 @@
-div.rate > h2 {
-  text-align: center;
-  padding: 10px;
-  padding-bottom: 30px;
-  color: white;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  font-size: 30px
+div.rate { 
+  h2 {
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 30px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 30px
+  }
+
+  div.rate-forms-container > form > h3 {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px
+  }
+
+  form > select#beer-select-form{
+    margin: auto
+  }
+
+  div.rate-forms-container {
+    width: 700px;
+    margin: auto;
+  }
+
+  div.rate-forms-container > form > div.chzn-container {
+    padding: 20px;
+  }
+
+  form > select {
+    padding: 30px;
+  }
+
+
+  div.rate-forms-container > form > input {
+    border: none;
+    padding: 10px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  div.rate-forms-container{
+    padding: 30px;
+    background-color: rgba(0,0,0,0.3);
+    margin: 30px;
+    margin-top: 120px;
+  }
+
 }
-
-div.rate > div.rate-forms-container > form > h3 {
-  color: white;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  font-size: 20px
-}
-
-div.rate > form > select#beer-select-form{
-  margin: auto
-}
-
-div.rate > div.rate-forms-container {
-  width: 700px;
-  margin: auto;
-}
-
-div.rate > div.rate-forms-container > form > div.chzn-container {
-  padding: 20px;
-}
-
-div.rate > form > select {
-  padding: 30px;
-}
-
-
-div.rate > div.rate-forms-container > form > input {
-  border: none;
-  padding: 10px;
-  color: white;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-div.rate > div.rate-forms-container{
-  padding-bottom: 30px
-}
-
-
 
 
 

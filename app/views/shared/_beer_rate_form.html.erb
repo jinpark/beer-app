@@ -1,5 +1,6 @@
-<select name="favbeers[beer_id][]" class="beer-list">
+<select name="favbeers[beer_ids][]" class="beer-list" data-placeholder="Choose a beer...">
 <% beers.each do |beer|  %>
+  <option value=""></option>
   <option value="<%= beer.beer_id %>"><%=beer.brewery_name%> | <%= beer.beer_name %></option>
 <% end %>
 </select>

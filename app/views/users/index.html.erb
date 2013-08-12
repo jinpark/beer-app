@@ -4,8 +4,7 @@
 
   <div class="stats group">
     <h3> Favorite Beer Statistics </h3>
-
-    <%= pie_chart(@beerstyles_hash, library: {backgroundColor: "transparent", legend: {textStyle: {color: 'white'}}, title: "Beer Styles", titleTextStyle: {color: 'white'} }) %>
+    <%= pie_chart(@beerstyles_hash, library: {backgroundColor: "transparent", legend: {textStyle: {color: 'white'}}, title: "Beer Styles", titleTextStyle: {color: 'white'} }, id: "pie") %>
     <%= column_chart(@beerabvs_hash, library: {
       backgroundColor: "transparent", 
       title: "# of Beers per ABV Range", 
@@ -22,7 +21,7 @@
           gridlines: {color: "white" }, 
           textStyle: {color: "white" }
           }
-        }
+        }, id: "column"
     ) %>
   </div>
 
@@ -101,7 +100,7 @@
   </div>
 
 
-  <div class="recommended">
+<!--   <div class="recommended">
     <h3> Recommended Beers </h3>
     <div class='recommended-beers-list-container'>
       <ul>
@@ -126,7 +125,7 @@
         <% end %>
       </ul>
     </div>
-  </div>
+  </div> -->
 
   <div class="<%= params[:beer_name].nil? ? "hidden" : "bars" %>"> 
     <a name="bars"></a>
@@ -170,7 +169,7 @@
       var geocoder = new google.maps.Geocoder();
       var latlng = startLoc;
       var mapOptions = {
-        zoom: 8,
+        zoom: 10,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
@@ -206,7 +205,7 @@
       geocoder.geocode({ 'address': address1 }, function(results, status){ 
       if (status == google.maps.GeocoderStatus.OK) {
         latLon = results[0].geometry.location;
-        callback(latLon);
+        init(latLon);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
@@ -214,8 +213,8 @@
 
     };
 
-    returnLatLon(String(<%= current_user.location %>), init);
-    for (var i = 0; i < bars.length; i++) {
+    returnLatLon(String(<%= current_user.location %>));
+    for (var i = 0; i < bars.length && i < 10; i++) {
       codeAddress(bars[i]['address'] + <%= current_user.location %>, bars[i]['name'] + '<br>' + bars[i]['address'] + '<br>' + bars[i]['phone'])
     }
     

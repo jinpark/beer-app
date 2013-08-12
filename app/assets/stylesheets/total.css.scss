@@ -12,10 +12,19 @@ p.notice, p.alert {
 }
 
 body {
-  background-image: url('/background.png'), -webkit-linear-gradient(bottom, #FAFF69 0%, #EF5E16 100%);
-  background-position: left top;
-  background-repeat: repeat-x, no-repeat;
-  background-attachment:fixed, fixed;
+  // background-image: url('/background.png'), -webkit-linear-gradient(bottom, #FAFF69 0%, #EF5E16 100%);
+  // background-position: left top;
+  // background-repeat: repeat-x, no-repeat;
+  // background-attachment:fixed, fixed;
+  // -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+  // -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+  // -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+  // transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+
+  background-image: -webkit-linear-gradient(bottom, #FAFF69 0%, #EF5E16 100%);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
   -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
   -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
   -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */

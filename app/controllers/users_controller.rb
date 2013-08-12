@@ -43,16 +43,18 @@ class UsersController < ApplicationController
     @beerabvs_hash = @beerabvs_hash.sort
   end
 
-  def rate
-    @user = current_user
-    @beers = Beerinfo.order("brewery_name")
-    
+
+  def create_favbeer 
+    p "LOOK HERE"
+    p params[:favbeers][:beer_ids]
+    params[:favbeers][:beer_ids].each do |beer_id_fav|
+      @favbeer = Favbeer.new
+      @favbeer.beer_id = beer_id_fav
+      @favbeer.user_id = current_user.id
+      @favbeer.save
+    end
+    redirect_to root_url
   end
-
-  # def createfavbeer 
-  #   @user.build
-
-  # end
 
 
 
