@@ -10,7 +10,12 @@ class FriendshipsController < ApplicationController
     # @follower.save
     @friendship = current_user.friendships.build(params[:friendship])
     @friendship.save
-    redirect_to user_url(@friendship.friend_id)
+    if request.xhr?
+      # Render a partial as response when using ajax requests.
+      render partial: 'users/unfollow_button', locals: {user: User.find(@friendship.friend_id), current_user: current_user, friend: [@friendship]}
+    else
+      redirect_to user_url(@friendship.friend_id)
+    end
   end
 
   def destroy
@@ -18,12 +23,19 @@ class FriendshipsController < ApplicationController
     p "LOOK HERE"
     p @friendship
     if @friendship
-      p "SHIT IS HAPPENING"
+      p "LOOK HERE FOR XHR"
+      p request
       friend_id = @friendship.friend_id
       @friendship.destroy
-      redirect_to user_url(friend_id)
+      if request.xhr?
+        # Render a partial as response when using ajax requests.
+        render partial: 'users/follow_button', locals: {user: User.find(friend_id), current_user: current_user}
+      else
+        p "UH OH"
+        redirect_to user_url(friend_id)
+      end
+
     else
-      p "SHIT IS FAILING TO HAPPEN"
       flash[:notice] = "Failed to unfollow"
       redirect_to root_url
     end

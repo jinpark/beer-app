@@ -17,8 +17,9 @@
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-      map = new google.maps.Map(document.getElementById("map-render-<%= beer_id %>"), mapOptions);
       $(document.getElementById("map-render-<%= beer_id %>")).height(400)
+      map = new google.maps.Map(document.getElementById("map-render-<%= beer_id %>"), mapOptions);
+
       // console.log(document.getElementById("rec-map-<%= beer_id %>"));
     }
 

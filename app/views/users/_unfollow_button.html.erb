@@ -1,7 +1,7 @@
 
 
 
-<form action="<%= friendship_url(friend.first.id) %>" method="post">
+<form action="<%= friendship_url(friend.first.id) %>" method="post" class="friend-form" data-remote="true">
   <input type="hidden" name="friendship[friend_id]" value=<%= user.id %>>
   <input type="hidden" name="_method" value="delete">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

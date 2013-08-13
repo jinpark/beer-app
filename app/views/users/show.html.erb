@@ -1,13 +1,15 @@
 <div class="show">
 
   <h2> <%= @user.username %> </h2>
+  <div class="friend-form-container"> 
   <% if @user != current_user %>
     <% if @friend %>
-      <%= render partial: 'unfollow_button', locals: {user: @user, current_user: current_user, friend: @friend} %>
+     <%= render partial: 'unfollow_button', locals: {user: @user, current_user: current_user, friend: @friend} %>
     <% else %>
       <%= render partial: 'follow_button', locals: {user: @user, current_user: current_user} %>
     <% end %>
   <% end %>
+  </div>
 
   <div class="stats group">
     <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_hash: @beerabvs_hash} %>
@@ -42,3 +44,24 @@
   </div>
 
 </div>
+
+<script>
+
+  $(document).ready(function(){
+  
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(".friend-form-container").on("ajax:success", ".friend-form", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $(this).remove();
+    $(".friend-form-container").prepend(data);
+    
+  });
+
+});
+  
+
+</script>

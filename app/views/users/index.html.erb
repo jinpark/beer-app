@@ -26,7 +26,7 @@
             <input type="hidden" name="beer_name" value="<%= find_beer_info(saved_beer.beer_id)[1] %>"  >
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <input type="hidden" name="beer_id" value="<%= saved_beer.beer_id %>">
-            <input type="submit" value="Map!">
+            <input type="submit" value="Map!" data-disable-with="Creating map...">
           </form>
 
 
