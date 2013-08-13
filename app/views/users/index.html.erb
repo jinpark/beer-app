@@ -3,32 +3,14 @@
   <h2> Hello <%= current_user.username %> </h2>
 
   <div class="stats group">
-    <h3> Favorite Beer Statistics </h3>
-    <%= pie_chart(@beerstyles_hash, library: {backgroundColor: "transparent", legend: {textStyle: {color: 'white'}}, title: "Beer Styles", titleTextStyle: {color: 'white'} }, id: "pie") %>
-    <%= column_chart(@beerabvs_hash, library: {
-      backgroundColor: "transparent", 
-      title: "# of Beers per ABV Range", 
-      titleTextStyle: {color: 'white'}, 
-      hAxis: {
-        title: "Beer ABV",  
-        titleTextStyle: {color: "white"}, 
-        gridlines: {color: "white"}, 
-        textStyle: {color: "white" }
-        }, 
-        vAxis: {
-          title: "# of Beers", 
-          titleTextStyle: {color: "white"}, 
-          gridlines: {color: "white" }, 
-          textStyle: {color: "white" }
-          }
-        }, id: "column"
-    ) %>
+    <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_hash: @beerabvs_hash} %>
   </div>
 
   <div class="saved">
     <h3> Saved Beers </h3>
     <div class='saved-beers-list-container'>
       <ul>
+        
         <% @saved_beers.each do |saved_beer| %>
         <li class="group"> 
           <div class="beer-info-and-buttons group">
@@ -39,11 +21,14 @@
           </div>
           <div class="button-container">
             <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"})%>
-            <form action="<%= user_savedbeer_url(current_user.id, saved_beer.id) %>" method="post" class="delete-saved-beer">
+            <form action="<%= savedbeer_url(saved_beer.id) %>" method="post" class="delete-saved-beer">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <input type="hidden" name="_method", value="delete">
               <input type="submit" value="unsave">
             </form>
+            <% if !@fav_beer_beer_ids.include? saved_beer.beer_id %>
+              <%= render partial: 'fav_beer_button', locals: {beer: saved_beer}%>
+            <% end %>
             <button class="recommend-button">Recommend me!</button>
           </div>
           </div>
@@ -63,7 +48,7 @@
     </div>
     <h4> Save another beer </h4>
     
-    <form action="<%= user_savedbeers_url(current_user) %>" method="post">
+    <form action="<%= savedbeers_url %>" method="post">
       <%= render partial: "shared/save_beer_form", locals: {beers: @allbeers}  %>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="submit" value="Save Beer">
@@ -79,12 +64,18 @@
           <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
           by 
           <%= favorited_beer.beerinfo.brewery_name %>  </div>
-          <div class="button-container"><%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"}) %>
-                  <form action="<%= user_favbeer_url(current_user.id, favorited_beer.id) %>" method="post" class="delete-favorited-beer">
-                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                   <input type="hidden" name="_method", value="delete">
-                  <input type="submit" value="unfavorite">
-                  </form></div>
+          <div class="button-container">
+            <%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"}) %>
+            <form action="<%= favbeer_url(favorited_beer.id) %>" method="post" class="delete-favorited-beer">
+             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+             <input type="hidden" name="_method", value="delete">
+            <input type="submit" value="unfavorite">
+            </form>
+            <% if !@saved_beer_beer_ids.include? favorited_beer.beer_id %>
+              <%= render partial: 'save_beer_button', locals: {beer: favorited_beer}%>
+            <% end %>
+        
+          </div>
         </li>
 
         <% end %>
@@ -92,7 +83,7 @@
     </div>
     <h4> Favorite another beer </h4>
     
-    <form action="<%= user_favbeers_url(current_user) %>" method="post">
+    <form action="<%= favbeers_url %>" method="post">
       <%= render partial: "shared/favorite_beer_form", locals: {beers: @allbeers}  %>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="submit" value="Favorite Beer">

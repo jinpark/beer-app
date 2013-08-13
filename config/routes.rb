@@ -2,10 +2,10 @@ BeerApp::Application.routes.draw do
   devise_for :users
 
   root to: "users#index"
-  resources :users do
-    resources :favbeers, only: [:create, :destroy]
-    resources :savedbeers, only: [:create, :destroy]
-  end
+  resources :users
+  resources :favbeers, only: [:create, :destroy]
+  resources :savedbeers, only: [:create, :destroy]
+  resources :friendships, only: [:create, :destroy]
   get 'rate' => "favbeers#rate"
   post 'findbar' => 'bars#findbar'
   post "create_favbeer" => "users#create_favbeer"

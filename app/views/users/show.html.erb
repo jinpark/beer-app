@@ -1,0 +1,44 @@
+<div class="show">
+
+  <h2> <%= @user.username %> </h2>
+  <% if @user != current_user %>
+    <% if @friend %>
+      <%= render partial: 'unfollow_button', locals: {user: @user, current_user: current_user, friend: @friend} %>
+    <% else %>
+      <%= render partial: 'follow_button', locals: {user: @user, current_user: current_user} %>
+    <% end %>
+  <% end %>
+
+  <div class="stats group">
+    <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_hash: @beerabvs_hash} %>
+  </div>
+
+  <div class="favorited">
+    <h3> Favorited Beers </h3>
+    <div class='favorited-beers-list-container'>
+      <ul>
+        <% @favorited_beers.each do |favorited_beer| %>
+        <li class="group"> 
+          <div class="favorited-beer-info"> 
+          <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
+          by 
+          <%= favorited_beer.beerinfo.brewery_name %>  
+          </div>
+          <% if !@saved_beer_beer_ids.include? favorited_beer.beer_id %>
+            <form action="<%= savedbeers_url %>" method="post">
+              <input type="hidden" name="savedbeers[beer_id]" value="<%= favorited_beer.beer_id %>">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="submit" value="Save Beer">
+            </form>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="commonality">
+    You have <%= @commonality.length %> beers in common out of <%= @yourfavbeer.length %>. (<%= (@commonality.length/@yourfavbeer.length.to_f * 100).round(2) %>%)
+  </div>
+
+</div>

@@ -41,12 +41,13 @@ class UsersController < ApplicationController
       end
     end
     @beerabvs_hash = @beerabvs_hash.sort
+    @saved_beer_beer_ids = @saved_beers.pluck("beer_id")
+    @fav_beer_beer_ids = @favorited_beers.pluck("beer_id")
   end
 
 
   def create_favbeer 
-    p "LOOK HERE"
-    p params[:favbeers][:beer_ids]
+
     params[:favbeers][:beer_ids].each do |beer_id_fav|
       @favbeer = Favbeer.new
       @favbeer.beer_id = beer_id_fav
@@ -54,6 +55,47 @@ class UsersController < ApplicationController
       @favbeer.save
     end
     redirect_to root_url
+  end
+
+  # def create
+  #   redirect_to create_favbeer_url
+  # end
+
+  def show
+    @user = User.find(params[:id])
+    @favorited_beers = @user.favbeers
+    @allbeers = Beerinfo.order("brewery_name")
+    @beerstyles_hash = Hash.new(0)
+    @beerabvs_hash = Hash.new(0)
+    @favorited_beers.each do |favbeer|
+      @beerstyles_hash[favbeer.beerinfo.beer_style] += 1
+      case
+        when  favbeer.beerinfo.beer_abv.between?(0,3)
+          @beerabvs_hash["0% - 3%"] += 1
+        when  favbeer.beerinfo.beer_abv.between?(3.1,4)
+          @beerabvs_hash["3% - 4%"] += 1
+        when  favbeer.beerinfo.beer_abv.between?(4.1,5)
+          @beerabvs_hash["4% - 5%"] += 1
+        when  favbeer.beerinfo.beer_abv.between?(5.1,6)
+          @beerabvs_hash["5% - 6%"] += 1
+        when  favbeer.beerinfo.beer_abv.between?(6.1,9)
+          @beerabvs_hash["6% - 9%"] += 1
+        when  favbeer.beerinfo.beer_abv > 9
+          @beerabvs_hash["9%+"] += 1
+      end
+    end
+    @beerabvs_hash = @beerabvs_hash.sort
+    @yourfavbeer = Favbeer.where(user_id: current_user.id)
+    if !@yourfavbeer.empty? && !@favorited_beers.empty?
+      @commonality =  @yourfavbeer.pluck(:beer_id) & @favorited_beers.pluck(:beer_id)
+    else
+      @commonality = []
+    end
+    @friend =  Friendship.find_all_by_user_id_and_friend_id(current_user.id, params[:id])
+    if @friend.empty?
+      @friend = false
+    end
+    @saved_beer_beer_ids = current_user.savedbeers.pluck("beer_id")
   end
 
 

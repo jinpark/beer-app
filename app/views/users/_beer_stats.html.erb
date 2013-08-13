@@ -1,0 +1,20 @@
+<h3> Favorite Beer Statistics </h3>
+<%= pie_chart(beerstyles_hash, library: {backgroundColor: "transparent", legend: {textStyle: {color: 'white'}}, title: "Beer Styles", titleTextStyle: {color: 'white'} }, id: "pie") %>
+<%= column_chart(beerabvs_hash, library: {
+  backgroundColor: "transparent", 
+  title: "# of Beers per ABV Range", 
+  titleTextStyle: {color: 'white'}, 
+  hAxis: {
+    title: "Beer ABV",  
+    titleTextStyle: {color: "white"}, 
+    gridlines: {color: "white"}, 
+    textStyle: {color: "white" }
+    }, 
+  vAxis: {
+    title: "# of Beers", 
+    titleTextStyle: {color: "white"}, 
+    gridlines: {color: "white" }, 
+    textStyle: {color: "white" }
+    }
+  }, id: "column"
+) %>

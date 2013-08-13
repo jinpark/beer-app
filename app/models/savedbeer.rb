@@ -5,4 +5,5 @@ class Savedbeer < ActiveRecord::Base
   belongs_to :beerinfo, foreign_key: :beer_id, primary_key: :beer_id
 
   validates :beer_id, uniqueness: {scope: :user_id, message: "You have already saved this beer"}
+  validates :beer_id, :user_id, presence: true
 end

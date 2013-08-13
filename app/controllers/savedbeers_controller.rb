@@ -1,12 +1,8 @@
 class SavedbeersController < ApplicationController
 
   def create
-    p "SAVED BEERS"
-    p params[:savedbeers]
     @savedbeer = Savedbeer.new(params[:savedbeers])
     @savedbeer.user_id = current_user.id
-    p "LOOK HERE"
-    p @savedbeer
     if @savedbeer.save
       flash[:notice] = "You saved #{find_beer_info(@savedbeer.beer_id)[1]}!"
       redirect_to root_url
@@ -17,7 +13,7 @@ class SavedbeersController < ApplicationController
   end
 
   def destroy
-    @savedbeer = Savedbeer.find(params[:id])
+    @savedbeer = Savedbeer.find_by_id_and_user_id(params[:id], current_user.id)
     if @savedbeer.destroy
       flash[:notice] = "You unsaved #{find_beer_info(@savedbeer.beer_id)[1]}!"
       redirect_to root_url
