@@ -98,6 +98,19 @@ class UsersController < ApplicationController
     @saved_beer_beer_ids = current_user.savedbeers.pluck("beer_id")
   end
 
+  def map
+
+    if request.xhr?
+      p "in users#map"
+      # Render a partial as response when using ajax requests.
+      render partial: "map", locals: {user_location: current_user.location, ruby_bars: find_bars_with_beer_name(params[:beer_name], current_user.location), beer_id: params[:beer_id]}
+    else
+      # Redirect as usual for plain html requests.
+      redirect_to root_url
+    end
+
+  end
+
 
 
 

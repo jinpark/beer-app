@@ -11,7 +11,7 @@
     <div class='saved-beers-list-container'>
       <ul>
         
-        <% @saved_beers.each do |saved_beer| %>
+        <% @saved_beers.each_with_index do |saved_beer, i| %>
         <li class="group"> 
           <div class="beer-info-and-buttons group">
           <div class="saved-beer-info"> 
@@ -20,18 +20,31 @@
             <%= saved_beer.beerinfo.brewery_name %>
           </div>
           <div class="button-container">
-            <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"})%>
+<!--             <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"})%> -->
+
+          <form action="<%= create_map_url %>" method="post"  data-remote="true" class="map-form" >
+            <input type="hidden" name="beer_name" value="<%= find_beer_info(saved_beer.beer_id)[1] %>"  >
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="beer_id" value="<%= saved_beer.beer_id %>">
+            <input type="submit" value="Map!">
+          </form>
+
+
             <form action="<%= savedbeer_url(saved_beer.id) %>" method="post" class="delete-saved-beer">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <input type="hidden" name="_method", value="delete">
               <input type="submit" value="unsave">
             </form>
+
+            
+
             <% if !@fav_beer_beer_ids.include? saved_beer.beer_id %>
               <%= render partial: 'fav_beer_button', locals: {beer: saved_beer}%>
             <% end %>
             <button class="recommend-button">Recommend me!</button>
           </div>
           </div>
+          <div class="map-render" id="map-render-<%= saved_beer.beer_id %>"></div>
 
              <ul class="recommended-per-beer groupup">
             <% find_recommendations(saved_beer.beerinfo.beer_id)[1].each do |rec_beer| %>
@@ -213,6 +226,23 @@
 
 
     })
+
+$(document).ready(function(){
+  
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(".map-form").on("ajax:success", function(event, data){
+    console.log($(this).parents('li').children(".map-render"));
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $(this).parents('li').children(".map-render").prepend(data);
+    
+  });
+
+});
+  
 
 
 //mapbox stuff

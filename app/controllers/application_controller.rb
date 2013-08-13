@@ -61,6 +61,9 @@ class ApplicationController < ActionController::Base
     }
     ).to_s
 
+    p "LOOK HERE"
+    p apiurl
+
     response = RestClient.get(apiurl)
     JSON.parse(response)["objects"]
   end

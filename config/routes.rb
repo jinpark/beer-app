@@ -9,6 +9,7 @@ BeerApp::Application.routes.draw do
   get 'rate' => "favbeers#rate"
   post 'findbar' => 'bars#findbar'
   post "create_favbeer" => "users#create_favbeer"
+  post "create_map" => "users#map"
 
 
   # The priority is based upon order of creation:
