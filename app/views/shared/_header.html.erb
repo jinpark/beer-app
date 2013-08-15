@@ -1,23 +1,19 @@
-
-
 <header class="top group">
   <nav class="top-bar">
-
     <div class="logo">
       <a href="<%= root_url %>">beerfavorit.es</a>
     </div>
 
     <ul class="top-list">
       <li>
-        <a href="<%= user_url(@user) %>"><%= @user.username.capitalize %></a>
+        <a href="<%= user_url(current_user) %>"><%= current_user.username.capitalize %></a>
       </li>
       <li>
         <a href="<%= edit_user_registration_url %>">Settings</a>
       </li>
       <li>
-          <%= button_to "Log Out", { controller: "devise/sessions", action: "destroy" }, method: :delete, form_class: "log-out-button"%>
+        <%= button_to "Log Out", { controller: "devise/sessions", action: "destroy" }, method: :delete, form_class: "log-out-button"%>
       </li>
     </ul>
-
   </nav>
 </header>

@@ -1,44 +1,25 @@
-
-        <li class="group"> 
-          <div class="beer-info-and-buttons group">
-          <div class="saved-beer-info"> 
-            <a href="http://beeradvocate.com/beer/profile/<%= saved_beer.beerinfo.brewery_id %>/<%= saved_beer.beerinfo.beer_id %>"> <%= saved_beer.beerinfo.beer_name %></a>
-            by 
-            <%= saved_beer.beerinfo.brewery_name %>
-          </div>
-          <div class="button-container">
-<!--             <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"})%> -->
-
-          <form action="<%= create_map_url %>" method="post"  data-remote="true" class="map-form" >
-            <input type="hidden" name="beer_name" value="<%= find_beer_info(saved_beer.beer_id)[1] %>"  >
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input type="hidden" name="beer_id" value="<%= saved_beer.beer_id %>">
-            <input type="submit" value="Map!" data-disable-with="Creating map...">
-          </form>
-
-
-            <form action="<%= savedbeer_url(saved_beer.id) %>" method="post" class="delete-saved-beer" data-remote="true">
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <input type="hidden" name="_method", value="delete">
-              <input type="submit" value="unsave" data-disable-with="Unsaving...">
-            </form>
-
-            
-
-            <% if !fav_beer_beer_ids.include? saved_beer.beer_id %>
-              <%= render partial: 'users/fav_beer_button', locals: {beer: saved_beer}%>
-            <% end %>
-            <button class="recommend-button">Recommend me!</button>
-          </div>
-          </div>
-          <div class="map-render" id="map-render-<%= saved_beer.beer_id %>"></div>
-
-             <ul class="recommended-per-beer groupup">
-            <% find_recommendations(saved_beer.beerinfo.beer_id)[1].each do |rec_beer| %>
-              <% rec_beer_info = find_beer_info(rec_beer[0]) %>
-            <li>
-              <%= rec_beer_info[1] %> by <%= rec_beer_info[0] %>
-            </li>
-            <% end %>
-          </ul>
-        </li>
+<li class="group"> 
+  <div class="beer-info-and-buttons group">
+    <div class="saved-beer-info"> 
+      <a href="http://beeradvocate.com/beer/profile/<%= saved_beer.brewery_id %>/<%= saved_beer.beer_id %>"> <%= saved_beer.beer_name %></a>
+      by <%= saved_beer.brewery_name %>
+    </div>
+    <div class="button-container">
+      <form action="<%= create_map_url %>" method="post"  data-remote="true" class="map-form" class="map-button">
+        <input type="hidden" name="beer_name" value="<%= saved_beer.beer_name %>"  >
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="beer_id" value="<%= saved_beer.beer_id %>">
+        <input type="submit" value="Map!" data-disable-with="Creating map...">
+      </form>
+      <form action="<%= savedbeer_url(saved_beer.id) %>" method="post" class="delete-saved-beer" data-remote="true">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method", value="delete">
+        <input type="submit" value="unsave" data-disable-with="Unsaving...">
+      </form>
+      <% if !fav_beer_beer_ids.include? saved_beer.beer_id %>
+        <%= render partial: 'users/fav_beer_button', locals: {beer: saved_beer, classname: "fav-save-beer"}%>
+      <% end %>
+    </div>
+  </div>
+  <div class="map-render"></div>
+</li>

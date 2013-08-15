@@ -1,5 +1,6 @@
-
+<div id="bars-info-<%= beer_id %>"></div>
 <div id="rec-map-<%= beer_id %>"></div>
+
 
 <script>
   $(document).ready(function() {
@@ -17,10 +18,8 @@
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-      $(document.getElementById("map-render-<%= beer_id %>")).height(400)
-      map = new google.maps.Map(document.getElementById("map-render-<%= beer_id %>"), mapOptions);
-
-      // console.log(document.getElementById("rec-map-<%= beer_id %>"));
+      $("#rec-map-<%= beer_id %>").height(400);
+      map = new google.maps.Map(document.getElementById("rec-map-<%= beer_id %>"), mapOptions);
     }
 
     function codeAddress(barLoc, info) {
@@ -62,8 +61,13 @@
 
     returnLatLon(String(<%= user_location %>));
     for (var i = 0; i < bars.length && i < 10; i++) {
-      codeAddress(bars[i]['address'] + <%= user_location %>, bars[i]['name'] + '<br>' + bars[i]['address'] + '<br>' + bars[i]['phone'])
+      codeAddress(bars[i]['address'] + <%= user_location %>, bars[i]['name'] + '<br>' + bars[i]['address'] + '<br>' + bars[i]['phone']);
     }
+    if (bars.length == 0) {
+      $("#bars-info-<%= beer_id %>").append("<div> No bars found </div>");
+    }
+    $("bars-info-<%= beer_id %>").closest(".map-button").remove();
+
 
   });
 </script>

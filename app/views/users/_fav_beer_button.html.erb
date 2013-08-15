@@ -1,4 +1,4 @@
-<form action="<%= favbeers_url %>" method="post">
+<form action="<%= favbeers_url %>" method="post" data-remote="true" class="<%= classname.nil? ? favbeer-form : classname %>">
 <input type="hidden" name="favbeers[beer_id]" value="<%= beer.beer_id %>">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 <input type="submit" value="Favorite Beer">

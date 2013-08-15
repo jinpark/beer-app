@@ -1,19 +1,25 @@
 <li class="group"> 
   <div class="favorited-beer-info"> 
-    <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
-    by 
-    <%= favorited_beer.beerinfo.brewery_name %>  
+    <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.brewery_id %>/<%= favorited_beer.beer_id %>"> <%= favorited_beer.beer_name %></a>
+    by <%= favorited_beer.brewery_name %>  
   </div>
   <div class="button-container">
-    <%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"}) %>
     <form action="<%= favbeer_url(favorited_beer.id) %>" method="post" class="delete-favorited-beer" data-remote="true">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method", value="delete" data-disable-with="Deleting...">
-    <input type="submit" value="unfavorite">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method", value="delete" data-disable-with="Deleting...">
+      <input type="submit" value="unfavorite">
     </form>
     <% if !saved_beer_beer_ids.include? favorited_beer.beer_id %>
-    <%= render partial: 'users/save_beer_button', locals: {beer: favorited_beer}%>
+      <%=  render partial: 'users/save_beer_button', locals: {beer: favorited_beer, classname: "save-fav-beer"} %>
     <% end %>
-
+    <button class="recommend-button">Recommend me!</button>
   </div>
+  <ul class="recommended-per-beer groupup" style="display: none;">
+    <% find_recommendations(favorited_beer.beer_id)[1].each do |rec_beer| %>
+    <% rec_beer_info = find_beer_info(rec_beer[0]) %>
+    <li>
+      <%= rec_beer_info[1] %> by <%= rec_beer_info[0] %>
+    </li>
+    <% end %>
+  </ul>
 </li>

@@ -12,27 +12,28 @@
   </div>
 
   <div class="stats group">
-    <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_hash: @beerabvs_hash} %>
+    <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_array: @beerabvs_array} %>
   </div>
 
   <div class="favorited">
     <h3> Favorited Beers </h3>
     <div class='favorited-beers-list-container'>
       <ul>
-        <% @favorited_beers.each do |favorited_beer| %>
+        <% @user.favbeers.each do |favorited_beer| %>
         <li class="group"> 
           <div class="favorited-beer-info"> 
           <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
-          by 
-          <%= favorited_beer.beerinfo.brewery_name %>  
+          by <%= favorited_beer.beerinfo.brewery_name %>  
           </div>
-          <% if !@saved_beer_beer_ids.include? favorited_beer.beer_id %>
-            <form action="<%= savedbeers_url %>" method="post">
-              <input type="hidden" name="savedbeers[beer_id]" value="<%= favorited_beer.beer_id %>">
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <input type="submit" value="Save Beer">
-            </form>
-          <% end %>
+          <div class="save-beer-form-container">
+            <% if !@user.savedbeers.pluck("beer_id").include? favorited_beer.beer_id %>
+              <form action="<%= savedbeers_url %>" method="post" data-remote="true" class="save-beer-form">
+                <input type="hidden" name="savedbeers[beer_id]" value="<%= favorited_beer.beer_id %>">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="submit" value="Save Beer">
+              </form>
+            <% end %>
+          </div>
         </li>
         <% end %>
       </ul>
@@ -40,7 +41,8 @@
   </div>
 
   <div class="commonality">
-    You have <%= @commonality.length %> beers in common out of <%= @yourfavbeer.length %> with <%= @user.username %>. (<%= (@commonality.length/@yourfavbeer.length.to_f * 100).round(2) %>%)
+    <p>You have <%= @commonality.length %> beers in common out of <%= current_user.favbeers.length %> 
+      with <%= @user.username %>. (<%= (@commonality.length/@user.favbeers.length.to_f * 100).round(2) %>%)</p>
   </div>
 
 </div>
@@ -61,7 +63,21 @@
     
   });
 
-});
+  });
+
+  $(document).ready(function(){
+  
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(document).on("ajax:success", ".savebeer-form", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $(this).siblings('.saved-beers-list-container').children().append(data);
+
+    });
+  });
   
 
 </script>

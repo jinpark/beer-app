@@ -4,7 +4,7 @@
 
   <div class="stats group">
     <div class="stats-charts">
-      <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_hash: @beerabvs_hash} %>
+      <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_array: @beerabvs_array} %>
     </div>
   </div>
 
@@ -14,7 +14,7 @@
       <ul class="saved-beer-ul">
         
         <% current_user.savedbeers.each_with_index do |saved_beer, i| %>
-        <%= render partial: "saved_beer_info_and_buttons", locals: {saved_beer: saved_beer, fav_beer_beer_ids: @fav_beer_beer_ids} %>
+        <%= render partial: "saved_beer_info_and_buttons", locals: {saved_beer: saved_beer, fav_beer_beer_ids: current_user.favbeers.pluck("beer_id")} %>
 
         <% end %>
       </ul>
@@ -34,7 +34,7 @@
       <ul class="favorited-beer-ul">
         <% current_user.favbeers.each do |favorited_beer| %>
 
-          <%= render partial: 'favorited_beer_info_and_buttons', locals: {favorited_beer: favorited_beer, saved_beer_beer_ids: @saved_beer_beer_ids} %>
+          <%= render partial: 'favorited_beer_info_and_buttons', locals: {favorited_beer: favorited_beer, saved_beer_beer_ids: current_user.savedbeers.pluck("beer_id")} %>
 
         <% end %>
       </ul>
@@ -59,74 +59,11 @@
 
   $(document).ready($(".recommended-per-beer").hide())
 
-  $(document).ready($(".recommend-button").on("click", function(event) {
-    $(this).parent().parent().parent().children('ul').slideToggle()
+  $(document).ready($(document).on("click", ".recommend-button",  function(event) {
+    $(this).closest("li.group").children('.recommended-per-beer').slideToggle();
+    console.log("LOOK SOMETHING HAPPENED");
   } ))
 
-  $(document).ready(function() {
-
-    var geocoder = null;
-    var map = null;
-    var latLon = null;
-    var bars = <%= raw @bars.to_json %>;
-
-    function init(startLoc) {
-      var geocoder = new google.maps.Geocoder();
-      var latlng = startLoc;
-      var mapOptions = {
-        zoom: 10,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
-      map = new google.maps.Map(document.getElementById('rec-map'), mapOptions);
-    }
-
-    function codeAddress(barLoc, info) {
-      var address = barLoc;
-      var geocoder = new google.maps.Geocoder();
-      geocoder.geocode( { 'address': address}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          map.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
-              map: map,
-              info: info,
-              position: results[0].geometry.location
-          });
-          var infowindow = new google.maps.InfoWindow();
-          google.maps.event.addListener(marker, 'click', function () {
-            infowindow.setContent('<p id="hook">' + this.info + '</p>');
-            infowindow.open(map, this);
-          });
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    }
-
-    
-    function returnLatLon(address1) {
-      var address = address1;
-      var geocoder = new google.maps.Geocoder();
-      geocoder.geocode({ 'address': address1 }, function(results, status){ 
-      if (status == google.maps.GeocoderStatus.OK) {
-        latLon = results[0].geometry.location;
-        init(latLon);
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-      });
-
-    };
-
-    returnLatLon(String(<%= current_user.location %>));
-    for (var i = 0; i < bars.length && i < 10; i++) {
-      codeAddress(bars[i]['address'] + <%= current_user.location %>, bars[i]['name'] + '<br>' + bars[i]['address'] + '<br>' + bars[i]['phone'])
-    }
-    
-
-
-
-    })
 
 $(document).ready(function(){
   
@@ -138,7 +75,7 @@ $(document).ready(function(){
     
     // We want the data passed in to be a single rendered partial.
     // That way we can easily prepend it to the container tag.
-    $(this).parents('li').children(".map-render").prepend(data);
+    $(this).parent().parent().parent(). children(".map-render").prepend(data);
     
   });
 });
@@ -154,14 +91,7 @@ $(document).ready(function(){
     // That way we can easily prepend it to the container tag.
     $(this).siblings('.saved-beers-list-container').children().append(data);
     
-    $.ajax({
-      url: "<%= stats_url %>",
-      type: 'post',
-      success: function (data, event) {
-        $('.stats-charts').html('');
-        $('.stats-charts').prepend(data);
-      }
-    });
+
   });
 });
 
@@ -174,7 +104,7 @@ $(document).ready(function(){
     
     // We want the data passed in to be a single rendered partial.
     // That way we can easily prepend it to the container tag.
-    $(this).siblings('.favorited-beers-list-container').children().append(data);  
+    $(this).siblings('.favorited-beers-list-container').children().append(data);
 
     $.ajax({
       url: "<%= stats_url %>",
@@ -197,7 +127,8 @@ $(document).ready(function(){
     
     // We want the data passed in to be a single rendered partial.
     // That way we can easily prepend it to the container tag.
-    $(this).parent().parent().remove()
+    $(this).parent().parent().parent().remove()
+
     
   });
 });
@@ -212,36 +143,60 @@ $(document).ready(function(){
     // We want the data passed in to be a single rendered partial.
     // That way we can easily prepend it to the container tag.
     $(this).parent().parent().remove()
+
+    $.ajax({
+      url: "<%= stats_url %>",
+      type: 'post',
+      success: function (data, event) {
+        $('.stats-charts').html('');
+        $('.stats-charts').prepend(data);
+      }
+    });
+
     
   });
 });
 
-
-//mapbox stuff
-// var map = L.mapbox.map('map', 'jinpark.map-x0vxytgt')
-//     .setView([37.9, -77], 6);
-
-// L.mapbox.markerLayer({
-//     // this feature is in the GeoJSON format: see geojson.org
-//     // for the full specification
-//     type: 'Feature',
-//     geometry: {
-//         type: 'Point',
-//         // coordinates here are in longitude, latitude order because
-//         // x, y is the standard for GeoJSON and many formats
-//         coordinates: [-77, 37.9]
-//     },
-//     properties: {
-//         title: 'A Single Marker',
-//         description: 'Just one of me',
-//         // one can customize markers by adding simplestyle properties
-//         // http://mapbox.com/developers/simplestyle/
-//         'marker-size': 'large',
-//         'marker-color': '#f0a'
-//     }
-// }).addTo(map);
-
+$(document).ready(function(){
   
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(document).on("ajax:success", ".save-fav-beer", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $('.saved-beers-list-container').children().append(data);
+    $(this).remove()
+    
+
+  });
+});
+
+$(document).ready(function(){
+  
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(document).on("ajax:success", ".fav-save-beer", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $('.favorited-beers-list-container').children().append(data);
+    $(this).remove();
+
+    $.ajax({
+    url: "<%= stats_url %>",
+    type: 'post',
+    success: function (data, event) {
+      $('.stats-charts').html('');
+      $('.stats-charts').prepend(data);
+    }
+    });
+    
+
+  });
+});
 
 
 </script>

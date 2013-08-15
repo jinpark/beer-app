@@ -26,11 +26,21 @@ class FavbeersController < ApplicationController
   def destroy
     @favbeer = Favbeer.find(params[:id])
     if @favbeer.destroy
-      flash[:notice] = "You unfavorited #{find_beer_info(@favbeer.beer_id)[1]}"
-      redirect_to root_url
+      if request.xhr?
+        # Render a partial as response when using ajax requests.
+        render partial: "users/unfaved"
+      else
+        # Redirect as usual for plain html requests.
+        flash[:notice] = "You unfavorited #{find_beer_info(@favbeer.beer_id)[1]}"
+        redirect_to root_url
+      end
     else
-      flash[:alert] = "Failed to unfavorite your beer"
-      redirect_to root_url
+      if request.xhr?
+        render partial: "shared/error"
+      else
+        flash[:alert] = "Failed to unfavorite your beer"
+        redirect_to root_url
+      end
     end
   end
   
@@ -38,14 +48,5 @@ class FavbeersController < ApplicationController
     @user = current_user
     @beers = Beerinfo.order("brewery_name")
   end
-
-  # def create_favbeer 
-  #   params[:favbeer][:beer_ids].each do |beer_id_fav|
-  #     @favbeer = Favbeer.new
-  #     @favbeer.beer_id = beer_id_fav
-  #     @favbeer.user_id = current_user.id
-  #     @favbeer.save
-  #   end
-  # end
 
 end

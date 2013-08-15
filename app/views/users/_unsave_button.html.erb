@@ -1,5 +1,6 @@
-<form action="<%= savedbeers_url %>" method="post" data-remote="true" class="<%= classname.nil? ? savebeer-form : classname %>">
+<form action="<%= savedbeer_url(savedbeer.id) %>" method="post">
   <input type="hidden" name="savedbeers[beer_id]" value="<%= beer.beer_id %>">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="submit" value="Save Beer">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Unsave Beer">
 </form>
