@@ -40,7 +40,7 @@
   </div>
 
   <div class="commonality">
-    You have <%= @commonality.length %> beers in common out of <%= @yourfavbeer.length %>. (<%= (@commonality.length/@yourfavbeer.length.to_f * 100).round(2) %>%)
+    You have <%= @commonality.length %> beers in common out of <%= @yourfavbeer.length %> with <%= @user.username %>. (<%= (@commonality.length/@yourfavbeer.length.to_f * 100).round(2) %>%)
   </div>
 
 </div>

@@ -1,0 +1,19 @@
+<li class="group"> 
+  <div class="favorited-beer-info"> 
+    <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
+    by 
+    <%= favorited_beer.beerinfo.brewery_name %>  
+  </div>
+  <div class="button-container">
+    <%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"}) %>
+    <form action="<%= favbeer_url(favorited_beer.id) %>" method="post" class="delete-favorited-beer" data-remote="true">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method", value="delete" data-disable-with="Deleting...">
+    <input type="submit" value="unfavorite">
+    </form>
+    <% if !saved_beer_beer_ids.include? favorited_beer.beer_id %>
+    <%= render partial: 'users/save_beer_button', locals: {beer: favorited_beer}%>
+    <% end %>
+
+  </div>
+</li>

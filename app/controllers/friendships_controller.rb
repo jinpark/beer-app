@@ -20,18 +20,13 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friendship = Friendship.find_by_user_id_and_friend_id(current_user.id, params[:friendship][:friend_id])
-    p "LOOK HERE"
-    p @friendship
     if @friendship
-      p "LOOK HERE FOR XHR"
-      p request
       friend_id = @friendship.friend_id
       @friendship.destroy
       if request.xhr?
         # Render a partial as response when using ajax requests.
         render partial: 'users/follow_button', locals: {user: User.find(friend_id), current_user: current_user}
       else
-        p "UH OH"
         redirect_to user_url(friend_id)
       end
 

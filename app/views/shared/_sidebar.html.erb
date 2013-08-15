@@ -1,3 +1,39 @@
-<!-- <h2 class="sidebar-title">Title</h2>
+<h2 class="sidebar-title">Activity Feed</h2>
 
- -->
+
+<form action="<%= users_url %>" method="post" data-remote="true" class="user-form">
+<% users =  User.all - [current_user] %>
+<select name="user" class="user-list" data-placeholder="Visit a user...">
+  <option value=""></option>
+  <% users.each do |user|  %>
+    <option value="<%= user_url(user.id) %>"><%=user.email%></option>
+  <% end %>
+</select>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Visit User">
+ </form>
+<ul>
+
+<% activities.take(10).each do |activity| %>
+  <% if activity.class == Savedbeer %>
+    <%= render partial: "shared/favbeer_activity", locals: {activity: activity, status: "favorite"} %>
+  <% else %>
+    <%= render partial: "shared/favbeer_activity", locals: {activity: activity, status: "saved"} %>
+  <% end %>
+<% end %>
+</ul>
+
+<script>
+  $(document).ready(
+    $(".user-list").chosen()
+    );
+
+  $(".user-form").on("click", "input[type=submit]", function(event) {
+    event.preventDefault();
+    var data = $()
+    window.location = $('.user-list').find(":selected").val();
+  }
+
+    )
+
+</script>

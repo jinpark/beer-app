@@ -42,15 +42,30 @@ div.container {
 }
 
 div.sidebar {
-  // width: 200px;
-  float: left;
-  background: gray;
+  width: 200px;
+  float: right;
+  background-color: rgba(0,0,0,0.3);
+  margin-top: 190px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+div.sidebar ul{
+  list-style-type: none;
+}
+
+div.sidebar li {
+  padding: 10px;
+}
+
+div.sidebar h2 {
+  padding: 10px;
 }
 
 div.content {
-  width: 1000px;
+  width: 800px;
   float: left;
-  background-color: rgba(0,0,0,0.0);
 }
 
 .groupup:before {

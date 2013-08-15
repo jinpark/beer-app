@@ -1,5 +1,6 @@
 BeerApp::Application.routes.draw do
-  devise_for :users
+  #devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   root to: "users#index"
   resources :users
@@ -10,6 +11,8 @@ BeerApp::Application.routes.draw do
   post 'findbar' => 'bars#findbar'
   post "create_favbeer" => "users#create_favbeer"
   post "create_map" => "users#map"
+  get "about" => "pages#about"
+  post "stats" => "users#stats"
 
 
   # The priority is based upon order of creation:

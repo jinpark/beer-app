@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
 
     beer_recs.sort! { |a,b| b[1] <=> a[1] }
 
-
     return [beer_id, beer_recs[0..5]]
   end
 
@@ -67,15 +66,5 @@ class ApplicationController < ActionController::Base
     response = RestClient.get(apiurl)
     JSON.parse(response)["objects"]
   end
-
-
-
-
-
-
-
-
-
-
 
 end

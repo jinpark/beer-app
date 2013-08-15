@@ -1,0 +1,4 @@
+<% beer_info = find_beer_info(activity.beer_id) %>
+<li>  <a href="<%= user_url(activity.user.id) %>"> <%= activity.user.username %> </a> <%= status == "favorite" ? "favorited" : "saved" %>  
+  <a href="http://beeradvocate.com/beer/profile/<%= beer_info[3] %>/<%= activity.beer_id %>"><%= beer_info[1] %></a> 
+  by <%= beer_info[0] %> (Style: <%= beer_info[2] %> <%= time_ago_in_words(activity.created_at) %> ago</li>

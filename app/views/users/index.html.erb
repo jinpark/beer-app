@@ -3,65 +3,25 @@
   <h2> Hello <%= current_user.username %> </h2>
 
   <div class="stats group">
-    <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_hash: @beerabvs_hash} %>
+    <div class="stats-charts">
+      <%= render partial: 'beer_stats', locals: {beerstyles_hash: @beerstyles_hash, beerabvs_hash: @beerabvs_hash} %>
+    </div>
   </div>
 
   <div class="saved">
     <h3> Saved Beers </h3>
     <div class='saved-beers-list-container'>
-      <ul>
+      <ul class="saved-beer-ul">
         
-        <% @saved_beers.each_with_index do |saved_beer, i| %>
-        <li class="group"> 
-          <div class="beer-info-and-buttons group">
-          <div class="saved-beer-info"> 
-            <a href="http://beeradvocate.com/beer/profile/<%= saved_beer.beerinfo.brewery_id %>/<%= saved_beer.beerinfo.beer_id %>"> <%= saved_beer.beerinfo.beer_name %></a>
-            by 
-            <%= saved_beer.beerinfo.brewery_name %>
-          </div>
-          <div class="button-container">
-<!--             <%= link_to("find bars", users_url(:beer_name => saved_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"})%> -->
-
-          <form action="<%= create_map_url %>" method="post"  data-remote="true" class="map-form" >
-            <input type="hidden" name="beer_name" value="<%= find_beer_info(saved_beer.beer_id)[1] %>"  >
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input type="hidden" name="beer_id" value="<%= saved_beer.beer_id %>">
-            <input type="submit" value="Map!" data-disable-with="Creating map...">
-          </form>
-
-
-            <form action="<%= savedbeer_url(saved_beer.id) %>" method="post" class="delete-saved-beer">
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <input type="hidden" name="_method", value="delete">
-              <input type="submit" value="unsave">
-            </form>
-
-            
-
-            <% if !@fav_beer_beer_ids.include? saved_beer.beer_id %>
-              <%= render partial: 'fav_beer_button', locals: {beer: saved_beer}%>
-            <% end %>
-            <button class="recommend-button">Recommend me!</button>
-          </div>
-          </div>
-          <div class="map-render" id="map-render-<%= saved_beer.beer_id %>"></div>
-
-             <ul class="recommended-per-beer groupup">
-            <% find_recommendations(saved_beer.beerinfo.beer_id)[1].each do |rec_beer| %>
-              <% rec_beer_info = find_beer_info(rec_beer[0]) %>
-            <li>
-              <%= rec_beer_info[1] %> by <%= rec_beer_info[0] %>
-            </li>
-            <% end %>
-          </ul>
-        </li>
+        <% current_user.savedbeers.each_with_index do |saved_beer, i| %>
+        <%= render partial: "saved_beer_info_and_buttons", locals: {saved_beer: saved_beer, fav_beer_beer_ids: @fav_beer_beer_ids} %>
 
         <% end %>
       </ul>
     </div>
     <h4> Save another beer </h4>
     
-    <form action="<%= savedbeers_url %>" method="post">
+    <form action="<%= savedbeers_url %>" method="post" data-remote="true" class="savebeer-form">
       <%= render partial: "shared/save_beer_form", locals: {beers: @allbeers}  %>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="submit" value="Save Beer">
@@ -71,80 +31,21 @@
   <div class="favorited">
     <h3> Favorited Beers </h3>
     <div class='favorited-beers-list-container'>
-      <ul>
-        <% @favorited_beers.each do |favorited_beer| %>
-        <li class="group"> <div class="favorited-beer-info"> 
-          <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
-          by 
-          <%= favorited_beer.beerinfo.brewery_name %>  </div>
-          <div class="button-container">
-            <%= link_to("find bars", users_url(:beer_name => favorited_beer.beerinfo.beer_name, anchor: "bars"), { :id => "find-bars-link"}) %>
-            <form action="<%= favbeer_url(favorited_beer.id) %>" method="post" class="delete-favorited-beer">
-             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-             <input type="hidden" name="_method", value="delete">
-            <input type="submit" value="unfavorite">
-            </form>
-            <% if !@saved_beer_beer_ids.include? favorited_beer.beer_id %>
-              <%= render partial: 'save_beer_button', locals: {beer: favorited_beer}%>
-            <% end %>
-        
-          </div>
-        </li>
+      <ul class="favorited-beer-ul">
+        <% current_user.favbeers.each do |favorited_beer| %>
+
+          <%= render partial: 'favorited_beer_info_and_buttons', locals: {favorited_beer: favorited_beer, saved_beer_beer_ids: @saved_beer_beer_ids} %>
 
         <% end %>
       </ul>
     </div>
     <h4> Favorite another beer </h4>
     
-    <form action="<%= favbeers_url %>" method="post">
+    <form action="<%= favbeers_url %>" method="post" class="favbeer-form" data-remote="true">
       <%= render partial: "shared/favorite_beer_form", locals: {beers: @allbeers}  %>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="submit" value="Favorite Beer">
     </form>
-  </div>
-
-
-<!--   <div class="recommended">
-    <h3> Recommended Beers </h3>
-    <div class='recommended-beers-list-container'>
-      <ul>
-        <% @all_rec_beers.each do |all_rec| %>
-          <% 2.times do |i| %>
-            <% rec = all_rec[1][i] %>
-            <li> Try: <%= rec[0][1] %> by <%= rec[0][0] %> (Style: <%= rec[0][2] %>)
-              <form action="<%= user_savedbeers_url(current_user.id) %>" method="post" class="save-recommended-beer">
-                <input type="hidden" name="savedbeers[beer_id]" value="<%= rec[0][3] %>">
-                <%= rec[0][3]  %>
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                <input type="submit" value="Save">
-              </form>
-              <ul>
-                <li> 
-                  Because you enjoyed 
-                  <%= all_rec[0][1] %> by <%= all_rec[0][0] %> 
-                </li>
-              </ul>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div>
-  </div> -->
-
-  <div class="<%= params[:beer_name].nil? ? "hidden" : "bars" %>"> 
-    <a name="bars"></a>
-    <h3> Bars </h3>
-    <p> <%= @bars.empty? ? "There are no #{params[:beer_name]} in your area" : "" %></p>
-    <div class="bars-list-container <%= @bars.empty? ? "hidden" : "" %>">
-      <h4>You can find <%= params[:beer_name] %> at: </h4>
-        <ul>
-          <% @bars.each do |bar| %>
-            <li><%= bar["name"] %> at <%= bar["address"] %></li>
-          <% end %>
-        </ul>
-        <div id='rec-map'>
-        <div id='map' style="width: 400px; height: 400px;"></div>
-    </div>
   </div>
 
 
@@ -232,7 +133,7 @@ $(document).ready(function(){
   // Using Rails UJS, bind an event listener to the form
   // Read more about UJS Ajax events here:
   // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(".map-form").on("ajax:success", function(event, data){
+  $(document).on("ajax:success", ".map-form", function(event, data){
     console.log($(this).parents('li').children(".map-render"));
     
     // We want the data passed in to be a single rendered partial.
@@ -240,9 +141,80 @@ $(document).ready(function(){
     $(this).parents('li').children(".map-render").prepend(data);
     
   });
-
 });
+
+$(document).ready(function(){
   
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(document).on("ajax:success", ".savebeer-form", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $(this).siblings('.saved-beers-list-container').children().append(data);
+    
+    $.ajax({
+      url: "<%= stats_url %>",
+      type: 'post',
+      success: function (data, event) {
+        $('.stats-charts').html('');
+        $('.stats-charts').prepend(data);
+      }
+    });
+  });
+});
+
+$(document).ready(function(){
+  
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(document).on("ajax:success", ".favbeer-form", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $(this).siblings('.favorited-beers-list-container').children().append(data);  
+
+    $.ajax({
+      url: "<%= stats_url %>",
+      type: 'post',
+      success: function (data, event) {
+        $('.stats-charts').html('');
+        $('.stats-charts').prepend(data);
+      }
+    });
+
+  });
+});
+
+$(document).ready(function(){
+  
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(document).on("ajax:success", ".delete-saved-beer", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $(this).parent().parent().remove()
+    
+  });
+});
+
+$(document).ready(function(){
+  
+  // Using Rails UJS, bind an event listener to the form
+  // Read more about UJS Ajax events here:
+  // https://github.com/rails/jquery-ujs/wiki/ajax
+  $(document).on("ajax:success", ".delete-favorited-beer", function(event, data){
+    
+    // We want the data passed in to be a single rendered partial.
+    // That way we can easily prepend it to the container tag.
+    $(this).parent().parent().remove()
+    
+  });
+});
 
 
 //mapbox stuff

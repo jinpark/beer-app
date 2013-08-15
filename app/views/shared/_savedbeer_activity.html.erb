@@ -1,0 +1,2 @@
+<% beer_info = find_beer_info(activity.beer_id) %>
+<li>  <%= activity.user.username  %> saved <%= beer_info[1] %> by <%= beer_info[0] %> (Style: <%= beer_info[2] %>) at <%= time_ago_in_words(activity.created_at)%> ago</li>

@@ -33,17 +33,31 @@
       <%= render partial: "shared/header" %> 
     </div>
   <% else %>
-    <%= render partial: "shared/pre-header" %>
+    <div class='parallax-container'>
+      <div class="top-white"></div>
+      <%= render partial: "shared/pre-header" %>
+    </div>
   <% end %>
   <div class='container'>
+    <% if current_user %>
+    <% @activity = [] %>
+    <% @friends_favbeers = current_user.friends.includes(favbeers: [:user]) %>
+    <% @friends_savedbeers = current_user.friends.includes(savedbeers: [:user]) %>
+    <% @friends_favbeers.each do |f| %>
+      <% @activity << f.favbeers %>
+    <% end %>
+    <% @friends_savedbeers.each do |f| %>
+      <% @activity << f.savedbeers %>
+    <% end %>
+    <% @activity.flatten! %>
+    <% @activity.sort!{ |a, b| a.created_at <=> b.created_at } %>
 
+      <div class="sidebar group">
+        <%= render partial: "shared/sidebar", locals: {activities: @activity} %>
+      </div>
+    <% end %>
     <div class="content">
-      
       <%= yield %>
-    </div>
-
-    <div class="sidebar">
-      <%= render partial: "shared/sidebar" %>
     </div>
 
   </div>

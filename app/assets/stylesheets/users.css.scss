@@ -200,3 +200,17 @@ form.log-out-button input {
   left: 900px;
 }
 
+div.top-white {
+  background-color: white;
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  margin-bottom: -2px;
+}
+
+div.parallax-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+}

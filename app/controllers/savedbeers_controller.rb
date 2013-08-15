@@ -4,11 +4,21 @@ class SavedbeersController < ApplicationController
     @savedbeer = Savedbeer.new(params[:savedbeers])
     @savedbeer.user_id = current_user.id
     if @savedbeer.save
-      flash[:notice] = "You saved #{find_beer_info(@savedbeer.beer_id)[1]}!"
-      redirect_to root_url
+      if request.xhr?
+        # Render a partial as response when using ajax requests.
+        render [partial: "users/saved_beer_info_and_buttons", locals: {saved_beer: @savedbeer, fav_beer_beer_ids: current_user.favbeers.pluck("beer_id")}, partial: "shared/error"]
+      else
+        # Redirect as usual for plain html requests.
+        flash[:notice] = "You saved #{find_beer_info(@savedbeer.beer_id)[1]}!"
+        redirect_to root_url
+      end
     else
-      flash[:alert] = "Failed to save"
-      redirect_to root_url
+      if request.xhr?
+        render partial: "shared/error"
+      else
+        flash[:alert] = "Failed to save"
+        redirect_to root_url
+      end
     end
   end
 
