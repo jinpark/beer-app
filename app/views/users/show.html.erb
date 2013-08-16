@@ -41,6 +41,7 @@
   </div>
 
   <div class="commonality">
+    <h3>Commonality</h3>
     <p>You have <%= @commonality.length %> beers in common out of <%= current_user.favbeers.length %> 
       with <%= @user.username %>. (<%= (@commonality.length/@user.favbeers.length.to_f * 100).round(2) %>%)</p>
   </div>
@@ -70,11 +71,11 @@
   // Using Rails UJS, bind an event listener to the form
   // Read more about UJS Ajax events here:
   // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".savebeer-form", function(event, data){
+  $(document).on("ajax:success", ".save-beer-form", function(event, data){
     
     // We want the data passed in to be a single rendered partial.
     // That way we can easily prepend it to the container tag.
-    $(this).siblings('.saved-beers-list-container').children().append(data);
+    $(this).remove()
 
     });
   });

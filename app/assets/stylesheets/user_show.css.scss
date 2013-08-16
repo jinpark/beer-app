@@ -13,8 +13,23 @@ div.show {
   .stats {
     background-color: rgba(0,0,0,0.5);
     width: 100%;
+    padding: 20px;
   }
 
+  .favorited {
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+
+  }
+
+  .commonality {
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+  }
 
 
 }
