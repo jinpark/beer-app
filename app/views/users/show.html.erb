@@ -3,7 +3,7 @@
   <h2> <%= @user.username %> </h2>
   <div class="friend-form-container"> 
   <% if @user != current_user %>
-    <% if @friend %>
+    <% if !@friend.empty? %>
      <%= render partial: 'unfollow_button', locals: {user: @user, current_user: current_user, friend: @friend} %>
     <% else %>
       <%= render partial: 'follow_button', locals: {user: @user, current_user: current_user} %>
