@@ -43,7 +43,7 @@
   <div class="commonality">
     <h3>Commonality</h3>
     <p>You have <%= @commonality.length %> beers in common out of <%= current_user.favbeers.length %> 
-      with <%= @user.username %>. (<%= (@commonality.length/@user.favbeers.length.to_f * 100).round(2) if !@commonality.empty? %>%)</p>
+      with <%= @user.username %>.  <%= (@commonality.length/@user.favbeers.length.to_f * 100).round(2) if !@user.favbeers.empty? %> </p>
   </div>
 
 </div>
