@@ -45,6 +45,7 @@ The list of technologies used include
 5. Now you're running beerfavorit.es! Go to localhost:3000 in your browser to check it out!
 
 **TO DO**
+
 1. Finish styling
 2. Fix map reappending problem
 3. Clean up javascript
