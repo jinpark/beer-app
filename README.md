@@ -37,6 +37,7 @@ The list of technologies used include
 
 
 **To run the code:**
+
 1. run bundle install
 2. run rake db:migrate
 3. run rake import (this will take a while. It's importing a LOT of data so grab a coffee and browse hacker news or reddit for a while!)
