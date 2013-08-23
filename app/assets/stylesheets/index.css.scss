@@ -154,6 +154,7 @@ div.index {
 
   ul.recommended-per-beer {
     list-style-type: circle;
+    margin-left: 30px;
   }
 
    button.recommend-me-button {
@@ -183,7 +184,7 @@ div.index {
     z-index: 1;
   }
 
-  .favbeer-form input {
+  .favbeer-form input[type="submit"]  {
     padding: 5px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
@@ -193,7 +194,7 @@ div.index {
 
   }
 
-  .savebeer-form input {
+  .savebeer-form input[type="submit"] {
     padding: 5px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
