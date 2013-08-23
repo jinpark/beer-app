@@ -6,7 +6,7 @@
 <select name="user" class="user-list" data-placeholder="Visit a user...">
   <option value=""></option>
   <% users.each do |user|  %>
-    <option value="<%= user_url(user.id) %>"><%=user.email%></option>
+    <option value="<%= user_url(user.id) %>"><%=user.username%></option>
   <% end %>
 </select>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -25,7 +25,7 @@
 
 <script>
   $(document).ready(
-    $(".user-list").chosen({width: "500px"})
+    $(".user-list").chosen({width: "400px"})
     );
 
   $(".user-form").on("click", "input[type=submit]", function(event) {

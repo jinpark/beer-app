@@ -63,6 +63,19 @@ div.sidebar h2 {
   padding: 10px;
 }
 
+div.sidebar .user-form {
+  margin: 10px;
+}
+
+div.sidebar .user-form input {
+  padding: 5px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+
+}
+
 div.content {
   width: 800px;
   float: left;

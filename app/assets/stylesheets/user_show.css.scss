@@ -8,6 +8,8 @@ div.show {
 
   h2 {
     padding-top: 150px;
+    text-align: center;
+    font-size: 60px;
   }
 
   .stats {
@@ -29,6 +31,51 @@ div.show {
     width: 100%;
     margin: 10px 0;
     padding: 20px;
+  }
+
+  .friend-form input {
+    padding: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .friend-form-container {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 30px;
+    padding-bottom: 30px;
+  }
+
+  ul {
+    margin-left: 10px;
+  }
+
+  ul li {
+    margin-top: 10px;
+    width: 100%
+  }
+
+  .favorited-beer-info {
+    float: left;
+    font-size: 20px;
+  }
+
+  .save-beer-form-container {
+    float: right;
+  }
+
+  .save-beer-form input {
+    padding: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 10px;
+    cursor: pointer;
   }
 
 

@@ -183,4 +183,50 @@ div.index {
     z-index: 1;
   }
 
+  .favbeer-form input {
+    padding: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    float: right;
+    cursor: pointer;
+
+  }
+
+  .savebeer-form input {
+    padding: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    float: right;
+    cursor: pointer;
+  }
+
+  .button-container input {
+    margin: 0px 5px 5px 0px;
+    padding: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  button.recommend-button {
+    margin: 0px 5px 5px 0px;
+    padding: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .recommended-per-beer {
+    margin-left: 10px;
+  }
+
+  .map-form {
+    cursor: pointer;
+  }
+
+
 }

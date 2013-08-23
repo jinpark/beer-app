@@ -61,7 +61,6 @@
 
   $(document).ready($(document).on("click", ".recommend-button",  function(event) {
     $(this).closest("li.group").children('.recommended-per-beer').slideToggle();
-    console.log("LOOK SOMETHING HAPPENED");
   } ))
 
 
@@ -76,6 +75,7 @@ $(document).ready(function(){
     // We want the data passed in to be a single rendered partial.
     // That way we can easily prepend it to the container tag.
     $(this).parent().parent().parent(). children(".map-render").prepend(data);
+    $(this).remove()
     
   });
 });
