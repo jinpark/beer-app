@@ -19,6 +19,7 @@
     <% rec_beer_info = find_beer_info(rec_beer[0]) %>
     <li>
       <%= rec_beer_info[1] %> by <%= rec_beer_info[0] %>
+      <%= render partial: 'users/save_beer_button', locals: {beer: Beerinfo.find_by_beer_id(rec_beer[0]), classname: "save-fav-beer"} %>
     </li>
     <% end %>
   </ul>

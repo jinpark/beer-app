@@ -9,7 +9,9 @@ p.notice, p.alert {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
   font-size: 20px;
+  z-index: 99999;
 }
+
 
 body {
   // background-image: url('/background.png'), -webkit-linear-gradient(bottom, #FAFF69 0%, #EF5E16 100%);

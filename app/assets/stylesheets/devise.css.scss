@@ -16,10 +16,18 @@ div.sign-in, div.sign-up, div.edit-user {
     padding: 5px;
     margin: 10px;
     cursor: pointer;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
   }
 
 }
 
-div.sign-in-container{
+div.sign-in-container, div.sign-up-container {
   width: 1000px;
 }

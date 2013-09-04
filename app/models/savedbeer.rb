@@ -13,11 +13,11 @@ class Savedbeer < ActiveRecord::Base
   end
 
   def brewery_id
-    self.beerinfo.beer_style
+    self.beerinfo.brewery_id
   end
 
   def beer_name
-    self.beerinfo.beer_style
+    self.beerinfo.beer_name
   end
 
   def beer_abv

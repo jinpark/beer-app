@@ -55,3 +55,9 @@ group :development do
 end
 
 gem "figaro"
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+gem 'factory_girl_rails'

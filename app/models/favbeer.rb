@@ -13,11 +13,11 @@ class Favbeer < ActiveRecord::Base
   end
 
   def brewery_id
-    self.beerinfo.beer_style
+    self.beerinfo.brewery_id
   end
 
   def beer_name
-    self.beerinfo.beer_style
+    self.beerinfo.beer_name
   end
 
   def beer_abv
@@ -57,8 +57,6 @@ class Favbeer < ActiveRecord::Base
     beerstyles_hash
   end
 
-
-
   def self.commonality(user1, user2)
     if user1.favbeers.empty? && user2.favbeers.empty?
       common =  user1.favbeers.pluck(:beer_id) & user2.favbeers.pluck(:beer_id)
@@ -67,16 +65,5 @@ class Favbeer < ActiveRecord::Base
     end
     common
   end
-
-
-
-
-
-
-
-
-
-
-
 
 end
