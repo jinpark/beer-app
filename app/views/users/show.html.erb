@@ -22,8 +22,8 @@
         <% @user.favbeers.each do |favorited_beer| %>
         <li class="group"> 
           <div class="favorited-beer-info"> 
-          <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beerinfo.beer_name %></a>
-          by <%= favorited_beer.beerinfo.brewery_name %>  
+          <a href="http://beeradvocate.com/beer/profile/<%= favorited_beer.beerinfo.brewery_id %>/<%= favorited_beer.beerinfo.beer_id %>"> <%= favorited_beer.beer_name %></a>
+          by <%= favorited_beer.brewery_name %>  
           </div>
           <div class="save-beer-form-container">
             <% if !@user.savedbeers.pluck("beer_id").include? favorited_beer.beer_id %>
@@ -53,32 +53,14 @@
 <script>
 
   $(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
+
   $(".friend-form-container").on("ajax:success", ".friend-form", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
     $(this).remove();
     $(".friend-form-container").prepend(data);
-    
   });
 
-  });
-
-  $(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
   $(document).on("ajax:success", ".save-beer-form", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
     $(this).remove()
-
     });
   });
   

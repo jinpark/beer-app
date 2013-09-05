@@ -15,17 +15,17 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400|Roboto:400,100,300' rel='stylesheet' type='text/css'>
 
 </head>
-<div class="bubble a"></div>
-<div class="bubble b"></div>
-<div class="bubble c"></div>
-<div class="bubble d"></div>
-<div class="bubble e"></div>
-<div class="bubble f"></div>
-<div class="bubble g"></div>
-<div class="bubble h"></div>
-<div class="bubble i"></div>
+  <div class="bubble a"></div>
+  <div class="bubble b"></div>
+  <div class="bubble c"></div>
+  <div class="bubble d"></div>
+  <div class="bubble e"></div>
+  <div class="bubble f"></div>
+  <div class="bubble g"></div>
+  <div class="bubble h"></div>
+  <div class="bubble i"></div>
 <body>
-    <p class="notice"><%= notice %></p>
+  <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <% if current_user %>
     <div class="header-container"> 
@@ -38,34 +38,19 @@
       <%= render partial: "shared/pre-header" %>
     </div>
   <% end %>
+
   <div class='container'>
     <% if current_user %>
-    <% @activity = [] %>
-    <% @friends_favbeers = current_user.friends.includes(favbeers: [:user]) %>
-    <% @friends_savedbeers = current_user.friends.includes(savedbeers: [:user]) %>
-    <% @friends_favbeers.each do |f| %>
-      <% @activity << f.favbeers %>
-    <% end %>
-    <% @friends_savedbeers.each do |f| %>
-      <% @activity << f.savedbeers %>
-    <% end %>
-    <% @activity.flatten! %>
-    <% @activity.sort!{ |a, b| a.created_at <=> b.created_at } %>
-
+    <% @activity = friend_activity(current_user) %>
       <div class="sidebar group">
         <%= render partial: "shared/sidebar", locals: {activities: @activity} %>
       </div>
     <% end %>
+
     <div class="content">
       <%= yield %>
     </div>
-
   </div>
 
 </body>
 </html>
-
-<script>
-
-
-</script>

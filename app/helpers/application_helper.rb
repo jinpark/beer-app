@@ -40,4 +40,20 @@ module ApplicationHelper
     recommendation_array.sort_by!{ |x| x[1]}.reverse!
     return recommendation_array
   end
+
+  def friend_activity(user)
+    activity = []
+    friends_savedbeers = user.friends.includes(favbeers: [:user])
+    friends_favbeers = user.friends.includes(savedbeers: [:user])
+    friends_savedbeers.each do |f|
+      activity << f.savedbeers
+    end
+    friends_favbeers.each do |f|
+      activity << f.favbeers
+    end
+    activity.flatten!
+    activity.sort! { |a, b| a.created_at <=> b.created_at }
+
+  end
+
 end

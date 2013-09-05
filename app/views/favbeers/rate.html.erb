@@ -1,10 +1,10 @@
 <div class='rate'>
 
-
   <div class='rate-forms-container'>  
 
       <h2>Tell us your favorite beers!</h2>
-    <form action="<%= create_favbeer_url %>" method="post" id="beer-select-form">
+      <form action="<%= create_favbeer_url %>" method="post" id="beer-select-form">
+
       <h3>Your favorite beer</h3>
       <%= render partial: "shared/beer_rate_form", locals: {beers: @beers}%>
       <h3>Your go-to at the bar</h3>
@@ -21,6 +21,4 @@
 
 <script>
 $(document).ready($(".beer-list").chosen())
-
-
 </script>

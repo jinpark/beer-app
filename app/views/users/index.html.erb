@@ -14,11 +14,11 @@
       <ul class="saved-beer-ul">
         
         <% current_user.savedbeers.each_with_index do |saved_beer, i| %>
-        <%= render partial: "saved_beer_info_and_buttons", locals: {saved_beer: saved_beer, fav_beer_beer_ids: current_user.favbeers.pluck("beer_id")} %>
-
+          <%= render partial: "saved_beer_info_and_buttons", locals: {saved_beer: saved_beer, fav_beer_beer_ids: current_user.favbeers.pluck("beer_id")} %>
         <% end %>
       </ul>
     </div>
+
     <h4> Save another beer </h4>
     
     <form action="<%= savedbeers_url %>" method="post" data-remote="true" class="savebeer-form">
@@ -33,23 +33,18 @@
     <div class='favorited-beers-list-container'>
       <ul class="favorited-beer-ul">
         <% current_user.favbeers.each do |favorited_beer| %>
-
           <%= render partial: 'favorited_beer_info_and_buttons', locals: {favorited_beer: favorited_beer, saved_beer_beer_ids: current_user.savedbeers.pluck("beer_id")} %>
-
         <% end %>
       </ul>
     </div>
+
     <h4> Favorite another beer </h4>
-    
     <form action="<%= favbeers_url %>" method="post" class="favbeer-form" data-remote="true">
       <%= render partial: "shared/favorite_beer_form", locals: {beers: @allbeers}  %>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="submit" value="Favorite Beer">
     </form>
   </div>
-
-
-
 </div>
 
 <script>
@@ -64,139 +59,67 @@
   } ))
 
 
-$(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".map-form", function(event, data){
-    console.log($(this).parents('li').children(".map-render"));
+  $(document).ready(function(){
     
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
-    $(this).parent().parent().parent(). children(".map-render").prepend(data);
-    $(this).remove()
-    
-  });
-});
+    $(document).on("ajax:success", ".map-form", function(event, data){
+      $(this).parent().parent().parent().children(".map-render").prepend(data);
+      $(this).remove()
+    });
 
-$(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".savebeer-form", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
-    $(this).siblings('.saved-beers-list-container').children().append(data);
-    
+    $(document).on("ajax:success", ".savebeer-form", function(event, data){
+      $(this).siblings('.saved-beers-list-container').children().append(data);
+    });
 
-  });
-});
+    $(document).on("ajax:success", ".favbeer-form", function(event, data){
+      $(this).siblings('.favorited-beers-list-container').children().append(data);
 
-$(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".favbeer-form", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
-    $(this).siblings('.favorited-beers-list-container').children().append(data);
+      $.ajax({
+        url: "<%= stats_url %>",
+        type: 'post',
+        success: function (data, event) {
+          $('.stats-charts').html('');
+          $('.stats-charts').prepend(data);
+        }
+      });
 
-    $.ajax({
+    });
+
+    $(document).on("ajax:success", ".delete-saved-beer", function(event, data){
+      $(this).parent().parent().parent().remove() 
+    });
+
+    $(document).on("ajax:success", ".delete-favorited-beer", function(event, data){
+      $(this).parent().parent().remove()
+
+      $.ajax({
+        url: "<%= stats_url %>",
+        type: 'post',
+        success: function (data, event) {
+          $('.stats-charts').html('');
+          $('.stats-charts').prepend(data);
+        }
+      });
+    });
+
+    $(document).on("ajax:success", ".save-fav-beer", function(event, data){
+      $('.saved-beers-list-container').children().append(data);
+      $(this).remove()
+    });
+
+    $(document).on("ajax:success", ".fav-save-beer", function(event, data){
+      $('.favorited-beers-list-container').children().append(data);
+      $(this).remove();
+
+      $.ajax({
       url: "<%= stats_url %>",
       type: 'post',
       success: function (data, event) {
         $('.stats-charts').html('');
         $('.stats-charts').prepend(data);
       }
+      });
     });
-
   });
-});
-
-$(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".delete-saved-beer", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
-    $(this).parent().parent().parent().remove()
-
-    
-  });
-});
-
-$(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".delete-favorited-beer", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
-    $(this).parent().parent().remove()
-
-    $.ajax({
-      url: "<%= stats_url %>",
-      type: 'post',
-      success: function (data, event) {
-        $('.stats-charts').html('');
-        $('.stats-charts').prepend(data);
-      }
-    });
-
-    
-  });
-});
-
-$(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".save-fav-beer", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
-    $('.saved-beers-list-container').children().append(data);
-    $(this).remove()
-    
-
-  });
-});
-
-$(document).ready(function(){
-  
-  // Using Rails UJS, bind an event listener to the form
-  // Read more about UJS Ajax events here:
-  // https://github.com/rails/jquery-ujs/wiki/ajax
-  $(document).on("ajax:success", ".fav-save-beer", function(event, data){
-    
-    // We want the data passed in to be a single rendered partial.
-    // That way we can easily prepend it to the container tag.
-    $('.favorited-beers-list-container').children().append(data);
-    $(this).remove();
-
-    $.ajax({
-    url: "<%= stats_url %>",
-    type: 'post',
-    success: function (data, event) {
-      $('.stats-charts').html('');
-      $('.stats-charts').prepend(data);
-    }
-    });
-    
-
-  });
-});
 
 
 </script>

@@ -14,7 +14,7 @@ FactoryGirl.define do
   end
 
   factory :savedbeer do 
-    beer_id 7
+    beer_id 6
     user_id 1
     association :user
   end
@@ -33,8 +33,12 @@ FactoryGirl.define do
     beerinfo { FactoryGirl.create(:beerinfo) }
   end
 
+  factory :savedbeer_beerinfo, parent: :savedbeer do
+    beerinfo { FactoryGirl.create(:beerinfo) }
+  end
+
   factory :users_with_asso, parent: :user do 
-    savedbeers { [ FactoryGirl.create(:savedbeer) ] }
+    savedbeers { [ FactoryGirl.create(:savedbeer_beerinfo) ] }
     favbeers {[ FactoryGirl.create(:favbeer_beerinfo) ]}
   end
 

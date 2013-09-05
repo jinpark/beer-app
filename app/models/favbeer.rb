@@ -58,10 +58,10 @@ class Favbeer < ActiveRecord::Base
   end
 
   def self.commonality(user1, user2)
-    if user1.favbeers.empty? && user2.favbeers.empty?
-      common =  user1.favbeers.pluck(:beer_id) & user2.favbeers.pluck(:beer_id)
+    if user1.favbeers.empty? || user2.favbeers.empty?
+      common =  []
     else
-      common = []
+      common = user1.favbeers.pluck(:beer_id) & user2.favbeers.pluck(:beer_id)
     end
     common
   end
