@@ -6,7 +6,9 @@ beerfavorit.es is a beer recommendation and discovery web app written in ruby on
 I'm also available for hire! Contact information is in my profile!
 
 Check out the site at beerfavorit.es
+
 User: user@example.com
+
 Pass: password
 
 **Data Set**
@@ -21,7 +23,7 @@ I feel like this was not the best way to do this. This was the first time I was 
 
 **Web App**
 
-This was a ruby on rails app with UJS/jQuery to help with the front end and user experience. The charts were created with Chartkick/Google Charts, maps are from Google Maps API and the list of bars were generously provided by Taplister's API. Styling was done with SASS and Adobe Illustrator for the topbar bubbles.
+This was a ruby on rails app with UJS/jQuery to help with the front end and user experience. The charts were created with Chartkick/Google Charts, maps are from Google Maps API and the list of bars and beermenus were generously provided by Taplister's API. Styling was done with SASS and Adobe Illustrator for the topbar bubbles.
 
 **Technologies**
 
