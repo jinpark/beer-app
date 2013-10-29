@@ -5,6 +5,10 @@ beerfavorit.es is a beer recommendation and discovery web app written in ruby on
 
 I'm also available for hire! Contact information is in my profile!
 
+Check out the site at beerfavorit.es
+User: user@example.com
+Pass: password
+
 **Data Set**
 
 The dataset used was generously provided by SNAP from Stanford University. It consists of 1,586,259 beer reviews from Beer Advocate, a beer discussion, information and review site. The reviews in the dataset range from Jan 1998 to Nov 2011, over 12 year of reviews. Reviews include product and user information, followed by each of these five ratings, and a plaintext review. Find out more about the dataset at http://snap.stanford.edu/data/web-BeerAdvocate.html 
@@ -14,8 +18,6 @@ The dataset was pruned. This was done by only taking beers that were reviewed ov
 There were two ways I could have gone from here. One way was to leave the dataset as is and do collaborative filtering on the fly by writing a quick SQL query that would have gotten common reviewers for a pair of beers. This turned out to be time consuming to calculate on the fly all the time. It took over 5 seconds per query and would have proved impossible to use in a webapp. The other option was to precalculate similarity values between beers and only have the SQL query grab the correct matches. This was also time consuming initially. It took more than a few hours to precalculate the similarity values but after this was calculated, the query for a beer pair dropped down to 10ms and to 5ms when the database was indexed. 
 
 I feel like this was not the best way to do this. This was the first time I was doing collaborative filtering so if you have any suggestions, please contact me!
-
-There is an underlying problem here. The way t
 
 **Web App**
 
